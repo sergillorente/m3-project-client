@@ -15,7 +15,7 @@ class Signup extends Component {
     event.preventDefault();
     const { username, email, password } = this.state;
 
-    this.props.signup(username, email, password);
+    this.props.signup(username, email, password)
   };
 
   handleChange = event => {
