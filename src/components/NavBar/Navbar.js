@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { withAuth } from './../context/auth-context';
+import { withAuth } from '../../context/auth-context';
 
-class Navbar extends Component {
+class Navbar extends React.Component {
   render() {
     // const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
-        <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
+        <Link to={'/'} className='logo'>
+          <h4><img src='../../../public/logo.png' alt="logo icon" /></h4>
         </Link>
         {this.props.isLoggedIn ? (
           <>
@@ -17,12 +17,12 @@ class Navbar extends Component {
           </>
         ) : (
           <>
-            <Link to="/login">
-              <button className="navbar-button">Login</button>{' '}
-            </Link>
-            <br />
             <Link to="/signup">
               <button className="navbar-button">Sign Up</button>{' '}
+            </Link>
+            <br />
+            <Link to="/login">
+              <button className="navbar-button">Log in</button>{' '}
             </Link>
           </>
         )}

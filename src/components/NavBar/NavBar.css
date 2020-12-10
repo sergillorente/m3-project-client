@@ -1,0 +1,13 @@
+.navbar {
+    background-color: rgb(202, 165, 159);
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.navbar-button {
+    background-color: rgb(238, 88, 65);
+    color: black;
+}
