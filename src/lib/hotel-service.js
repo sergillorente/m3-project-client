@@ -30,9 +30,9 @@ class HotelService {
 }
 
 // Create instance (object) containing all axios calls as methods
-const HotelService = new HotelService();
+const hotelService = new HotelService();
 
-export default HotelService;
+export default hotelService;
 
 // Service is a set of methods abstracted and placed into a class, out of which we create one instance.
 // In the above case, all axios request calls are abstracted into methods.

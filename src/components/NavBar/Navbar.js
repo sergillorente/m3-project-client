@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
+import './NavBar.css'
 
 class Navbar extends React.Component {
   render() {

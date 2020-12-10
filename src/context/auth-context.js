@@ -64,12 +64,11 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const { isLoggedIn, isLoading, user, signup, login, logout } = value;
+            const { isLoggedIn, user, signup, login, logout } = value;
 
             return (<WrappedComponent 
                       {...this.props}
                       isLoggedIn={isLoggedIn} 
-                      isLoading={isLoading} 
                       user={user} 
                       signup={signup} 
                       login={login} 

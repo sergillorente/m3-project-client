@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
+import './Footer.css'
 
 function Footer () {
     return (
@@ -22,7 +23,7 @@ function Footer () {
     )
 }
 
-export default Footer;
+export default withAuth(Footer);
 
 // there will be 2 footers:
 

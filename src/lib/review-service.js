@@ -42,6 +42,6 @@ class ReviewService {
       }
 }
 
-const ReviewService = new ReviewService();
+const reviewService = new ReviewService();
 
-export default ReviewService;
+export default reviewService;
