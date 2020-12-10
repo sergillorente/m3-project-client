@@ -11,15 +11,15 @@ class AuthService {
   signup( username, email, password ) {
     const pr = this.auth
       .post("/signup", { username, email, password })
-      .then((response) => response.data);
+      .then((response) => console.log(response.data));
       // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
 
     return pr;
   }
 
-  login( username, password ) {
+  login( email, password ) {
     const pr = this.auth
-      .post("/login", { username, password })
+      .post("/login", { email, password })
       .then((response) => response.data);
       
     return pr;

@@ -29,7 +29,6 @@ class HotelService {
 
 }
 
-// Create instance (object) containing all axios calls as methods
 const hotelService = new HotelService();
 
 export default hotelService;

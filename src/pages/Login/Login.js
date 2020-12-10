@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/Navbar";
-// import { withAuth } from './../context/auth-context';
+import { withAuth } from './../../context/auth-context';
 
 class Login extends Component {
-  state = { username: "", password: "" };
+  state = { email: "", password: "" };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     // Call funciton coming from AuthProvider ( via withAuth )
-    this.props.login(username, password);
+    this.props.login(email, password);
   };
 
   handleChange = event => {
@@ -20,7 +20,7 @@ class Login extends Component {
   };
 
   render() {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
 
     return (
       <div>
@@ -29,8 +29,8 @@ class Login extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           
-          <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
+          <label>Email:</label>
+          <input type="email" name="email" value={email} onChange={this.handleChange}/>
 
           <label>Password:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
@@ -38,12 +38,14 @@ class Login extends Component {
           <input type="submit" value="Login" />
         </form>
 
-        <p>Don't have an account?</p>
-        <Link to="/signup">Sign Up</Link>
+        <div>
+          <p>or <Link to="/signup"> Sign up</Link> if you don't have an account</p>
+        </div>
+
         <Footer />
       </div>
     );
   }
 }
 
-export default Login;
+export default withAuth(Login);

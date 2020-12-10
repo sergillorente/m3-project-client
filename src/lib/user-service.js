@@ -24,9 +24,9 @@ class UserService {
         return pr;
       }
 
-    updateOne = (id) => {
+    updateOne = () => {
         const pr = this.api
-            .put('/profile/${id}', id)
+            .put('/profile/${id}')
             .then((response) => response.data);
 
         return pr;
@@ -37,4 +37,4 @@ class UserService {
 
 const userService = new UserService();
 
-export default UserService;
+export default userService;
