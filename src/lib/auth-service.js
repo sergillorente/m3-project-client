@@ -3,14 +3,14 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.auth = axios.create({
-      baseURL: "http://localhost:5000",
+      baseURL: "http://localhost:5000/auth",
       withCredentials: true
     });
   }
 
-  signup( username, password ) {
+  signup( username, email, password ) {
     const pr = this.auth
-      .post("/auth/signup", { username, password })
+      .post("/signup", { username, email, password })
       .then((response) => response.data);
       // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
 
@@ -19,7 +19,7 @@ class AuthService {
 
   login( username, password ) {
     const pr = this.auth
-      .post("/auth/login", { username, password })
+      .post("/login", { username, password })
       .then((response) => response.data);
       
     return pr;
@@ -27,7 +27,7 @@ class AuthService {
 
   logout() {
     const pr = this.auth
-      .get("/auth/logout")
+      .get("/logout")
       .then((response) => response.data);
 
     return pr;
@@ -35,7 +35,7 @@ class AuthService {
 
   me() {
     const pr = this.auth
-      .get("/auth/me")
+      .get("/me")
       .then((response) => response.data);
 
     return pr;

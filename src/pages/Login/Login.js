@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/Navbar";
 // import { withAuth } from './../context/auth-context';
 
 class Login extends Component {
@@ -21,6 +24,7 @@ class Login extends Component {
 
     return (
       <div>
+      <NavBar />
         <h1>Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>
@@ -33,6 +37,10 @@ class Login extends Component {
 
           <input type="submit" value="Login" />
         </form>
+
+        <p>Don't have an account?</p>
+        <Link to="/signup">Sign Up</Link>
+        <Footer />
       </div>
     );
   }

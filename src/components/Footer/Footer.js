@@ -5,23 +5,18 @@ import { withAuth } from '../../context/auth-context';
 function Footer () {
     return (
         <div className="footer">
-            {this.props.isLoggedIn ? (
-                <>
-            <Link to={'/hotels'}>
-            <div>
-                <img src='../../../public/hotel.png' alt="hotel icon" />
-                <p className="text-color">HOTELS</p>              
-            </div>
+            <Link to='/hotels'>
+                <div>
+                    <img src='../../../public/hotel.png' alt="hotel icon" />
+                    <p className="text-color">HOTELS</p>              
+                </div>
             </Link>
-            <Link to={'/profile'}>
-            <div>
-                <img src='../../../public/profile-user.png' alt="profile icon" />
-                <p className="text-color">PROFILE</p>
-            </div>
+            <Link to='/profile'>
+                <div>
+                    <img src='../../../public/profile-user.png' alt="profile icon" />
+                    <p className="text-color">PROFILE</p>
+                </div>
             </Link>
-            </>
-            ): null
-            }
 
         </div>
     )

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/Navbar";
 // import { withAuth } from './../context/auth-context';
 
 class Signup extends Component {
@@ -8,8 +10,8 @@ class Signup extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-    
-    this.props.signup( username, password );
+
+    this.props.signup(username, password);
   };
 
   handleChange = event => {
@@ -21,6 +23,7 @@ class Signup extends Component {
     const { username, password } = this.state;
     return (
       <div>
+        <NavBar />
         <h1>Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
@@ -33,9 +36,10 @@ class Signup extends Component {
 
           <input type="submit" value="Signup" />
         </form>
-        
+
         <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <Link to="/login"> Login</Link>
+        <Footer />
       </div>
     );
   }

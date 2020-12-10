@@ -14,14 +14,14 @@ function AnonRoute (routeProps) {
 
   // If AuthProvider is still making request to check the user
   if (isLoading) return 'Loading';
-
   return (
     <Route
       exact={exact}
       path={path}
       render={
         function(props) {
-          if (isLoggedIn) return <Redirect to="/private" />
+          if (path === '/hotels') return <ComponentToShow {...props} />
+          if (isLoggedIn) return <Redirect to="/hotels" />
           else if (! isLoggedIn) return <ComponentToShow {...props} />
         }
       }
