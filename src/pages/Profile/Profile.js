@@ -7,18 +7,17 @@ import './Profile.css'
 class Profile extends React.Component {
 
     state ={
-        username: props.user.username,
-        email: props.user.email,
-        password: props.user.password,
-        picture: props.user.picture
+        username: this.props.user.username,
+        email: this.props.user.email,
+        password: this.props.user.password,
+        picture: this.props.user.picture
     }
-     // crear un cDM amb els valors que venen del context i posar l'state amb valor d'strings buides?
 
     handleFormSubmit = event => {
         event.preventDefault();
         const { username, email, password, picture } = this.state;
     
-        this.props.signup(username, email, password) // picture hauria d'anar aquí, però doesn't make sense perquè el signup 
+        // this.props.signup(username, email, password) // picture hauria d'anar aquí, però doesn't make sense perquè el signup 
       };                                             // no té aquesta property, per això volia crear una nova function al context   
                                                      // per a què inclogués la picture                                                       
       handleChange = event => {
@@ -34,7 +33,7 @@ class Profile extends React.Component {
                 <NavBar />
 
                 <h1>PROFILE</h1>
-                <img src="/images/default-profile.jpg" alt="default image" className="default-pic" />
+                <img src={picture} alt="default image" className="default-pic" />
                 <h3>Change picture</h3>
     
                 <form>
@@ -42,7 +41,7 @@ class Profile extends React.Component {
                     <input type="text" name="username" value={username} placeholder="Write..." onChange={this.handleChange} />
     
                     <label>Email:</label>
-                    <input type="email" name="email" value={email} readonly={email} />
+                    <input type="email" name="email" value={email} disabled={email} />
     
                     <label>Password:</label>
                     <input type="password" name="password" value={password} readonly= "******** " />
@@ -53,8 +52,8 @@ class Profile extends React.Component {
                 {/*Create the second form for the profile picture */}
                 <label>Profile picture:</label>
                     <input type="file" name="picture" className="profile-pic" />
-    
-                    <input type="submit" value="Profile" />
+                    {/* The button, when pressed submited, needs to send this information to the backend and updated*/}
+                    <button type="submit">SUBMIT</button>
                 </form>
 
                 <Footer />

@@ -20,6 +20,18 @@ class Hotels extends React.Component {
 
     }
 
+    handleSearch = (value) => {
+        console.log(value)
+    }
+    
+    handleFilterByDistrict = (value) => {
+        console.log(value)
+    }
+    
+    handleFilterByCategory = (value) => {
+        console.log(value)
+    }
+
     render() {
         return (
             <div>
@@ -28,7 +40,11 @@ class Hotels extends React.Component {
                     ? <p>It's loading...</p>
                     : <div>
                         <div>
-                            <SearchBar /> 
+                            <SearchBar 
+                                handleSearch={this.handleSearch}
+                                handleFilterByDistrict={this.handleFilterByDistrict}
+                                handleFilterByCategory={this.handleFilterByCategory}
+                            /> 
                         </div>
                         <div>
                             {this.state.hotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
