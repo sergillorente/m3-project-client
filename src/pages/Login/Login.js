@@ -30,13 +30,17 @@ class Login extends Component {
         <form onSubmit={this.handleFormSubmit}>
           
           <label>Email:</label>
-          <input type="email" name="email" value={email} onChange={this.handleChange}/>
+          <input required type="email" name="email" value={email} onChange={this.handleChange}/>
 
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <input required type="password" name="password" value={password} onChange={this.handleChange} />
 
           <input type="submit" value="Login" />
         </form>
+
+        <div>
+          {this.props.error && <p>{this.props.error}</p>}
+        </div>
 
         <div>
           <p>or <Link to="/signup"> Sign up</Link> if you don't have an account</p>

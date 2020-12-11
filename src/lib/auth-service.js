@@ -9,37 +9,29 @@ class AuthService {
   }
 
   signup( username, email, password ) {
-    const pr = this.auth
-      .post("/signup", { username, email, password })
+    const pr = this.auth.post("/signup", { username, email, password })
       .then((response) => response.data)
-      .catch(err => err.response.data.message)
-
-    return pr;
-  }
-
-  login( email, password ) {
-    const pr = this.auth
-      .post("/login", { email, password })
-      .then((response) => response.data)
-      .catch(err => err.response.data.message)
       
-    return pr;
-  }
-
-  logout() {
-    const pr = this.auth
-      .get("/logout")
+      return pr;
+    }
+    
+    login( email, password ) {
+      const pr = this.auth.post("/login", { email, password })
       .then((response) => response.data)
-      .catch(err => err.response.data.message)
-
-    return pr;
-  }
-
-  me() {
-    const pr = this.auth
-      .get("/me")
+      
+      return pr;
+    }
+    
+    logout() {
+      const pr = this.auth.get("/logout")
       .then((response) => response.data)
-      .catch(err => err.response.data.message)
+      
+      return pr;
+    }
+    
+    me() {
+      const pr = this.auth.get("/me")
+      .then((response) => response.data)
 
     return pr;
   }

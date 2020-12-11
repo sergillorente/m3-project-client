@@ -9,38 +9,30 @@ class ReviewService {
     }
 
     getOne = (hotelId) => {
-        const pr = this.api
-            .get(`/review/${id}`, { hotelId} )
-            .then((response) => response.data)
-            .catch(err => err.response.data.message)
+        const pr = this.api.get(`/review/${id}`, { hotelId} )
+        .then((response) => response.data)
     
         return pr;
     }
 
     getOne = (hotelId, userId) => {
-        const pr = this.api
-            .get('/review/${id}/${id}', hotelId, userId)
-            .then((response) => response.data)
-            .catch(err => err.response.data.message)
+        const pr = this.api.get('/review/${id}/${id}', hotelId, userId)
+        .then((response) => response.data)
 
         return pr;
     }
 
     updateOne = (reviewId) => {
-        const pr = this.api
-            .post('/review/${id}', reviewId)
-            .then((response) => response.data)
-            .catch(err => err.response.data.message)
+        const pr = this.api.post('/review/${id}', reviewId)
+        .then((response) => response.data)
 
         return pr;
 
     }
 
     deleteOne = (id) => {
-        const pr = this.api
-            .delete(`/review/${id}` )
+        const pr = this.api.delete(`/review/${id}` )
             .then((response) => response.data)
-            .catch(err => err.response.data.message)
     
         return pr;
       }

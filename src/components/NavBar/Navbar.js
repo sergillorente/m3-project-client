@@ -5,7 +5,7 @@ import './NavBar.css'
 
 class Navbar extends React.Component {
   render() {
-    // const { user, logout, isLoggedin } = this.props;
+    const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
         <Link to={'/'}>
@@ -13,7 +13,7 @@ class Navbar extends React.Component {
         </Link>
         {this.props.isLoggedIn ? (
           <>
-            <p>username: {this.props.user && this.props.user.username}</p>
+            {/* <p>username: {this.props.user && this.props.user.username}</p> */}
             <button onClick={this.props.logout}>Logout</button>
           </>
         ) : (

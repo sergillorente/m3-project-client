@@ -12,19 +12,15 @@ class HotelService {
   }
 
   getAll = () => {
-    const pr = this.api
-      .get('/hotels')
+    const pr = this.api.get('/hotels')
       .then((response) => response.data)
-      .catch(err => console.log(err))
 
     return pr;
   }
 
   getOne = (id) => {
-    const pr = this.api
-      .get(`/hotels/${id}`, id)
+    const pr = this.api.get(`/hotels/${id}`, id)
       .then((response) => response.data)
-      .catch(err => err.response.data.message)
 
     return pr;
   }

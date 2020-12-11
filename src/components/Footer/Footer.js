@@ -3,25 +3,34 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
 import './Footer.css'
 
-function Footer () {
-    return (
-        <div className="footer">
-            <Link to='/hotels'>
-                <div>
-                    <img src='/images/hotel.png' alt="hotel icon" />
-                    <p className="text-color">HOTELS</p>              
-                </div>
-            </Link>
-            <Link to='/profile'>
-                <div>
-                    <img src='/images/profile-user.png' alt="profile icon" />
-                    <p className="text-color">PROFILE</p>
-                </div>
-            </Link>
+function Footer(props) {
+    
+    return props.isLoggedIn ? (
+            <div className="footer">
+                <Link to='/hotels'>
+                    <div>
+                        <img src='/images/hotel.png' alt="hotel icon" />
+                        <p className="text-color">HOTELS</p>
+                    </div>
+                </Link>
+                <Link to='/profile'>
+                    <div>
+                        <img src='/images/profile-user.png' alt="profile icon" />
+                        <p className="text-color">PROFILE</p>
+                    </div>
+                </Link>
 
-        </div>
-    )
-}
+            </div>
+        ) : (<div className="footer">
+                <Link to='/hotels'>
+                    <div>
+                        <img src='/images/hotel.png' alt="hotel icon" />
+                        <p className="text-color">HOTELS</p>
+                    </div>
+                </Link>
+            </div>
+        )
+    }
 
 export default withAuth(Footer);
 
