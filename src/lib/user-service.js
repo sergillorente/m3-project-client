@@ -11,7 +11,7 @@ class UserService {
     addNewContent = () => {
         const pr = this.api.post('/profile')
             .then((response) => response.data)
-
+            
         return pr;
     }
 

@@ -12,14 +12,15 @@ class Profile extends React.Component {
         password: props.user.password,
         picture: props.user.picture
     }
+     // crear un cDM amb els valors que venen del context i posar l'state amb valor d'strings buides?
 
     handleFormSubmit = event => {
         event.preventDefault();
         const { username, email, password, picture } = this.state;
     
-        this.props.signup(username, email, password)
-      };
-    
+        this.props.signup(username, email, password) // picture hauria d'anar aquí, però doesn't make sense perquè el signup 
+      };                                             // no té aquesta property, per això volia crear una nova function al context   
+                                                     // per a què inclogués la picture                                                       
       handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
@@ -46,7 +47,11 @@ class Profile extends React.Component {
                     <label>Password:</label>
                     <input type="password" name="password" value={password} readonly= "******** " />
 
-                    <label>Profile picture:</label>
+                </form>
+
+                <form>
+                {/*Create the second form for the profile picture */}
+                <label>Profile picture:</label>
                     <input type="file" name="picture" className="profile-pic" />
     
                     <input type="submit" value="Profile" />

@@ -1,6 +1,5 @@
 import React from 'react';
 import authService from './../lib/auth-service';
-import userService from './../lib/user-service'
 
 const { Consumer, Provider } = React.createContext();
 
@@ -41,12 +40,6 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  updateInputProfile = () => {
-    userService.updateInputProfile()
-      .then(() => this.setState({isLoggedIn: true, user}))
-      .catch((err) => {
-        this.setState({error: err.response.data.message})
-  })
 
   render() {
     const { isLoggedIn, isLoading, user, error } = this.state;
