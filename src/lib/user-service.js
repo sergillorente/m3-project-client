@@ -11,7 +11,8 @@ class UserService {
     updateOne = (update) => {
         const pr = this.api
             .post('/profile', update)
-            .then((response) => response.data);
+            .then((response) => response.data)
+            .catch(err => err.response.data.message)
 
         return pr;
     }
@@ -19,7 +20,8 @@ class UserService {
     getOne = () => {
         const pr = this.api
             .get(`/profile/${id}`)
-            .then((response) => response.data);
+            .then((response) => response.data)
+            .catch(err => err.response.data.message)
     
         return pr;
       }
@@ -27,7 +29,8 @@ class UserService {
     updateOne = () => {
         const pr = this.api
             .put('/profile/${id}')
-            .then((response) => response.data);
+            .then((response) => response.data)
+            .catch(err => err.response.data.message)
 
         return pr;
     }

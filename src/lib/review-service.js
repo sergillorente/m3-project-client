@@ -11,7 +11,7 @@ class ReviewService {
     getOne = (hotelId) => {
         const pr = this.api
             .get(`/review/${id}`, { hotelId} )
-            .then((response) => console.log(response.data))
+            .then((response) => response.data)
             .catch(err => err.response.data.message)
     
         return pr;
@@ -20,7 +20,7 @@ class ReviewService {
     getOne = (hotelId, userId) => {
         const pr = this.api
             .get('/review/${id}/${id}', hotelId, userId)
-            .then((response) => console.log(response.data))
+            .then((response) => response.data)
             .catch(err => err.response.data.message)
 
         return pr;
@@ -29,7 +29,7 @@ class ReviewService {
     updateOne = (reviewId) => {
         const pr = this.api
             .post('/review/${id}', reviewId)
-            .then((response) => console.log(response.data))
+            .then((response) => response.data)
             .catch(err => err.response.data.message)
 
         return pr;
@@ -39,7 +39,7 @@ class ReviewService {
     deleteOne = (id) => {
         const pr = this.api
             .delete(`/review/${id}` )
-            .then((response) => console.log(response.data))
+            .then((response) => response.data)
             .catch(err => err.response.data.message)
     
         return pr;

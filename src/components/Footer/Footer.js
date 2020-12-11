@@ -8,13 +8,13 @@ function Footer () {
         <div className="footer">
             <Link to='/hotels'>
                 <div>
-                    <img src='../../../public/hotel.png' alt="hotel icon" />
+                    <img src='/images/hotel.png' alt="hotel icon" />
                     <p className="text-color">HOTELS</p>              
                 </div>
             </Link>
             <Link to='/profile'>
                 <div>
-                    <img src='../../../public/profile-user.png' alt="profile icon" />
+                    <img src='/images/profile-user.png' alt="profile icon" />
                     <p className="text-color">PROFILE</p>
                 </div>
             </Link>

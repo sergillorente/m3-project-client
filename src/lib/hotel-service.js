@@ -14,8 +14,8 @@ class HotelService {
   getAll = () => {
     const pr = this.api
       .get('/hotels')
-      .then((response) => console.log(response.data))
-      .catch(err => err.response.data.message)
+      .then((response) => response.data)
+      .catch(err => console.log(err))
 
     return pr;
   }
@@ -23,7 +23,7 @@ class HotelService {
   getOne = (id) => {
     const pr = this.api
       .get(`/hotels/${id}`, id)
-      .then((response) => console.log(response.data))
+      .then((response) => response.data)
       .catch(err => err.response.data.message)
 
     return pr;
