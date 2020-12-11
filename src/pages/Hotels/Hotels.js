@@ -4,7 +4,7 @@ import Footer from './../../components/Footer/Footer';
 import { withAuth } from '../../context/auth-context';
 import hotelService from './../../lib/hotel-service'
 import HotelCard from '../../components/HotelCard/HotelCard';
-
+import SearchBar from '../../components/SearchBar/SearchBar'
 
 class Hotels extends React.Component {
     state = {
@@ -26,7 +26,14 @@ class Hotels extends React.Component {
                 <NavBar />
                 {this.state.isLoading
                     ? <p>It's loading...</p>
-                    : this.state.hotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />) 
+                    : <div>
+                        <div>
+                            <SearchBar /> 
+                        </div>
+                        <div>
+                            {this.state.hotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
+                        </div>
+                    </div> 
                 }
                 {this.state.error && <p>{this.state.error}</p>}
                 <Footer />
