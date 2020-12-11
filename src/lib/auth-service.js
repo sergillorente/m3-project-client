@@ -11,16 +11,17 @@ class AuthService {
   signup( username, email, password ) {
     const pr = this.auth
       .post("/signup", { username, email, password })
-      .then((response) => console.log(response))
-      .catch(err => console.log(err.response.data.message))
-      // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
+      .then((response) => console.log(response.data))
+      .catch(err => err.response.data.message)
+
     return pr;
   }
 
   login( email, password ) {
     const pr = this.auth
       .post("/login", { email, password })
-      .then((response) => response.data);
+      .then((response) => console.log(response.data))
+      .catch(err => err.response.data.message)
       
     return pr;
   }
@@ -28,7 +29,8 @@ class AuthService {
   logout() {
     const pr = this.auth
       .get("/logout")
-      .then((response) => response.data);
+      .then((response) => console.log(response.data))
+      .catch(err => err.response.data.message)
 
     return pr;
   }
@@ -36,7 +38,8 @@ class AuthService {
   me() {
     const pr = this.auth
       .get("/me")
-      .then((response) => response.data);
+      .then((response) => console.log(response.data))
+      .catch(err => err.response.data.message)
 
     return pr;
   }
