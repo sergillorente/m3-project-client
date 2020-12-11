@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from './../../components/NavBar/Navbar';
+import NavBar from '../../components/NavBar/NavBar';
 import Footer from './../../components/Footer/Footer';
 import { withAuth } from '../../context/auth-context';
 import hotelService from './../../lib/hotel-service'

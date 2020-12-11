@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/Navbar";
+import NavBar from "../../components/NavBar/NavBar";
 import { withAuth } from './../../context/auth-context';
 
 class Login extends Component {

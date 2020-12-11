@@ -8,21 +8,21 @@ class UserService {
         });
     }
 
-    updateOne = (update) => {
-        const pr = this.api.post('/profile', update)
+    addNewContent = () => {
+        const pr = this.api.post('/profile')
             .then((response) => response.data)
 
         return pr;
     }
 
-    getOne = () => {
+    getUserProfile = () => {
         const pr = this.api.get(`/profile/${id}`)
             .then((response) => response.data)
 
         return pr;
     }
 
-    updateOne = () => {
+    updateInputProfile = () => {
         const pr = this.api.put('/profile/${id}')
             .then((response) => response.data)
 
