@@ -1,33 +1,33 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { withAuth } from './../../context/auth-context';
 import './SearchBar.css'
 
 class SearchBar extends React.Component {
-    state ={
+    state = {
         search: "",
-        district: "",
+        district: null,
         category: null
     }
 
     handleChange = event => {
         const { name, value } = event.target;
-        console.log('name', name);
-        console.log('value', value);
+        console.log('name ==>', name, 'value==>', value);
         this.setState({ [name]: value })
-      };
+    };
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.handleSearch(this.state.search, this.state.district, this.state.category)
+    }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.props.handleSearch}>
-                    <input type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.handleChange}/>
-                    <input type="submit" value="Search" />
-                </form>
-                <form onSubmit={this.props.handleFilterByDistrict}>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.handleChange} />
                     <label>
                         Filter by district:
                         <select name="district" value={this.state.district} onChange={this.handleChange}>
+                            <option value={null}>All</option>
                             <option value="Sants-Montjuïc">Sants-Montjuïc</option>
                             <option value="Horta-Guinardó">Horta-Guinardó</option>
                             <option value="Ciutat Vella">Ciutat Vella</option>
@@ -39,20 +39,21 @@ class SearchBar extends React.Component {
                             <option value="Sant Martí">Sant Martí</option>
                         </select>
                     </label>
-                </form>
-                <form onSubmit={this.props.handleFilterByCategory}>
                     <label>
                         Filter by category:
                         <select name="category" value={this.state.category} onChange={this.handleChange}>
+                            <option value={null}>All</option>
                             <option value={3}>3-stars</option>
                             <option value={4}>4-stars</option>
                             <option value={5}>5-stars</option>
                         </select>
                     </label>
+                    <input type="submit" value="Search" />
                 </form>
+                <button onClick={this.props.removeFilters}>Remove filters</button>
             </div>
         )
     }
 }
 
-export default withAuth(SearchBar)
+export default SearchBar

@@ -9,27 +9,26 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 class Hotels extends React.Component {
     state = {
         hotels: [],
+        filteredHotels: [],
         isLoading: true,
         error: false
     }
 
     componentDidMount() {
         hotelService.getAll()
-        .then(response => this.setState({ hotels: response, isLoading: false }))
+        .then(response => this.setState({ hotels: response, filteredHotels: response, isLoading: false }))
         .catch(err => this.setState( { error: err.response.data.message, isLoading: false }))
 
     }
 
-    handleSearch = (value) => {
-        console.log(value)
+    handleSearch = (search, district, category) => {
+        console.log(search, district, category);
+        //filter array of hotels by search, district and category
+        //setState of filteredHotels
     }
     
-    handleFilterByDistrict = (value) => {
-        console.log(value)
-    }
-    
-    handleFilterByCategory = (value) => {
-        console.log(value)
+    removeFilters = () => {
+        console.log('filters Removed');
     }
 
     render() {
@@ -47,7 +46,7 @@ class Hotels extends React.Component {
                             /> 
                         </div>
                         <div>
-                            {this.state.hotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
+                            {this.state.filteredHotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
                         </div>
                     </div> 
                 }
