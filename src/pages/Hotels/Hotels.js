@@ -22,7 +22,6 @@ class Hotels extends React.Component {
     }
 
     handleSearch = (search, district, category) => {
-        console.log(search, district, category);
 
         const filteredHotels = this.state.hotels.filter((hotel) => {
             if (search && !hotel.title.toLowerCase().includes(search.toLowerCase())) {
@@ -41,7 +40,8 @@ class Hotels extends React.Component {
     }
     
     removeFilters = () => {
-        console.log('filters Removed');
+        this.setState( { filteredHotels: this.state.hotels } )
+        console.log(this.state.filtredHotels);
     }
 
     render() {
@@ -54,8 +54,7 @@ class Hotels extends React.Component {
                         <div>
                             <SearchBar 
                                 handleSearch={this.handleSearch}
-                                handleFilterByDistrict={this.handleFilterByDistrict}
-                                handleFilterByCategory={this.handleFilterByCategory}
+                                removeFilters={this.removeFilters}
                             /> 
                         </div>
                         <div>
