@@ -23,8 +23,21 @@ class Hotels extends React.Component {
 
     handleSearch = (search, district, category) => {
         console.log(search, district, category);
-        //filter array of hotels by search, district and category
-        //setState of filteredHotels
+
+        const filteredHotels = this.state.hotels.filter((hotel) => {
+            if (search && !hotel.title.toLowerCase().includes(search.toLowerCase())) {
+                return false
+            }
+            if (district && hotel.district !== district) {
+                return false
+            } 
+            if (category && hotel.category !== +category) {
+                return false
+            }
+            return true
+        })
+
+        this.setState( { filteredHotels: filteredHotels} )
     }
     
     removeFilters = () => {

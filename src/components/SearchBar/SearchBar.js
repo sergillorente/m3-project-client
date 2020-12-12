@@ -4,8 +4,8 @@ import './SearchBar.css'
 class SearchBar extends React.Component {
     state = {
         search: "",
-        district: null,
-        category: null
+        district: "",
+        category: ""
     }
 
     handleChange = event => {
@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
                     <label>
                         Filter by district:
                         <select name="district" value={this.state.district} onChange={this.handleChange}>
-                            <option value={null}>All</option>
+                            <option value="">Show All</option>
                             <option value="Sants-Montjuïc">Sants-Montjuïc</option>
                             <option value="Horta-Guinardó">Horta-Guinardó</option>
                             <option value="Ciutat Vella">Ciutat Vella</option>
@@ -42,7 +42,7 @@ class SearchBar extends React.Component {
                     <label>
                         Filter by category:
                         <select name="category" value={this.state.category} onChange={this.handleChange}>
-                            <option value={null}>All</option>
+                            <option value="">Show All</option>
                             <option value={3}>3-stars</option>
                             <option value={4}>4-stars</option>
                             <option value={5}>5-stars</option>
