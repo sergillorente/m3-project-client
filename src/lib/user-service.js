@@ -15,14 +15,14 @@ class UserService {
         return pr;
     }
 
-    getUserProfile = () => {
+    getUserProfile = (id) => {
         const pr = this.api.get(`/profile/${id}`)
             .then((response) => response.data)
 
         return pr;
     }
 
-    updateInputProfile = () => {
+    updateProfile = (id) => {
         const pr = this.api.put('/profile/${id}')
             .then((response) => response.data)
 
