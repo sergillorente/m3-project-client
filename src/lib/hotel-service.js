@@ -18,8 +18,8 @@ class HotelService {
     return pr;
   }
 
-  getOne = (id) => {
-    const pr = this.api.get(`/hotels/${id}`, id)
+  getOneHotel = (id) => {
+    const pr = this.api.get(`/hotels/${id}`)
       .then((response) => response.data)
 
     return pr;
