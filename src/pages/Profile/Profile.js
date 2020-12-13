@@ -6,25 +6,29 @@ import './Profile.css'
 import userService from '../../lib/user-service'
 
 class Profile extends React.Component {
-    state ={
+    state = {
         username: this.props.user.username,
         password: '',
+        error: ''
     }
 
     handleSubmitForm = event => {
         event.preventDefault();
         const { username, password } = this.state;
-        console.log(username, password);
 
-        userService.updateProfile()
-
-    };   
+        userService.updateProfile({ username, password })
+            .then(response => {
+                this.setState({ error: '' })
+                this.props.getMe()
+            })
+            .catch(error => this.setState({ error: error.response.data.message }))
+    };
 
     handleChange = event => {
         const { name, value } = event.target;
         console.log(name, value);
         this.setState({ [name]: value });
-      };
+    };
 
     render() {
         const { username, password } = this.state;
@@ -39,22 +43,26 @@ class Profile extends React.Component {
                 <h3>Update user information:</h3>
                 <form onSubmit={this.handleSubmitForm}>
                     <label>Username:</label>
-                    <input type="text" name="username" value={username} placeholder="Write..." onChange={this.handleChange} />
+                    <input required type="text" name="username" value={username} placeholder="Write..." onChange={this.handleChange} />
 
                     <label>Email:</label>
                     <input type="email" name="email" placeholder={this.props.user.email} disabled />
-        
+
                     <label>Password:</label>
                     <input type="password" name="password" value={password} placeholder="*****" onChange={this.handleChange} />
 
                     <input type="submit" value="Save Changes" />
                 </form>
 
+                <div>
+                    {this.state.error && <p>{this.state.error}</p>}
+                </div>
+
                 <Footer />
             </div>
         )
     }
-    
+
 }
 
 export default withAuth(Profile);

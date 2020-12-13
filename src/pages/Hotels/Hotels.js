@@ -16,8 +16,8 @@ class Hotels extends React.Component {
 
     componentDidMount() {
         hotelService.getAll()
-        .then(response => this.setState({ hotels: response, filteredHotels: response, isLoading: false }))
-        .catch(err => this.setState( { error: err.response.data.message, isLoading: false }))
+            .then(response => this.setState({ hotels: response, filteredHotels: response, isLoading: false }))
+            .catch(err => this.setState({ error: err.response.data.message, isLoading: false }))
 
     }
 
@@ -29,18 +29,18 @@ class Hotels extends React.Component {
             }
             if (district && hotel.district !== district) {
                 return false
-            } 
+            }
             if (category && hotel.category !== +category) {
                 return false
             }
             return true
         })
 
-        this.setState( { filteredHotels: filteredHotels} )
+        this.setState({ filteredHotels: filteredHotels })
     }
-    
+
     removeFilters = () => {
-        this.setState( { filteredHotels: this.state.hotels } )
+        this.setState({ filteredHotels: this.state.hotels })
         console.log(this.state.filtredHotels);
     }
 
@@ -51,16 +51,16 @@ class Hotels extends React.Component {
                 {this.state.isLoading
                     ? <p>It's loading...</p>
                     : <div>
-                        <div>
-                            <SearchBar 
-                                handleSearch={this.handleSearch}
-                                removeFilters={this.removeFilters}
-                            /> 
-                        </div>
+                        {this.props.isLoggedIn ? 
+                            <SearchBar
+                            handleSearch={this.handleSearch}
+                            removeFilters={this.removeFilters}
+                        />
+                        : null}
                         <div>
                             {this.state.filteredHotels.map((hotel) => <HotelCard key={hotel._id} hotel={hotel} />)}
                         </div>
-                    </div> 
+                    </div>
                 }
                 {this.state.error && <p>{this.state.error}</p>}
                 <Footer />

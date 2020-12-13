@@ -2,7 +2,7 @@ import axios from "axios";
 
 class ReviewService {
     constructor() {
-      this.auth = axios.create({
+      this.api = axios.create({
         baseURL: "http://localhost:5000/api",
         withCredentials: true
       });
