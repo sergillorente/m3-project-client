@@ -37,7 +37,6 @@ class HotelDetails extends React.Component {
 
         reviewService.getAll(hotelId)
             .then(response => this.setState({ reviews: response, isLoading: false }))
-            // .catch(error => this.setState({ error: error.response.data.message, isLoading: false }))
     }
 
     handleSubmit = (rating, text) => {
@@ -48,7 +47,6 @@ class HotelDetails extends React.Component {
     }
 
     handleDelete = (reviewId, index) => {
-        console.log(index);
         reviewService.deleteOne(reviewId)
             .then(response => {
                 const newReviews = [ ...this.state.reviews ]

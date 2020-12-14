@@ -19,7 +19,7 @@ class Navbar extends React.Component {
         ) : (
           <>
             <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>{' '}
+              <button className="navbar-button" id="signup">Sign Up</button>{' '}
             </Link>
             <br />
             <Link to="/login">

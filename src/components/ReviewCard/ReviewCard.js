@@ -13,7 +13,6 @@ const ReviewCard = (props) => {
     const { index } = props
     const { _id: currentUserId } = props.user
 
-    console.log(userId);
     return (<div>
         <img src={userId.picture} alt='user' height='30px' />
         <p>{userId.username}</p>
