@@ -42,12 +42,17 @@ class HotelDetails extends React.Component {
 
     handleSubmit = (rating, text) => {
         const pr = reviewService.createOne(this.props.match.params.hotelId, { rating, text})
-            .then(createdReview =>this.setState({ reviews: [ ...this.state.reviews, createdReview ] }))
+            .then(createdReview => this.setState({ reviews: [ ...this.state.reviews, createdReview ] }))
 
         return pr
     }
 
     handleSubmitWhenDeleted = () => {
+        const review = this.props.match.params.reviewId
+        console.log(review);
+        
+        reviewService.deleteOne(review)
+            .then(response => this.setState( { reviews: response} ))
 
     }
 
