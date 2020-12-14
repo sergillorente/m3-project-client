@@ -3,22 +3,24 @@ import { withAuth } from '../../context/auth-context'
 
 const ReviewCard = (props) => {
     
-    handleSubmitWhenDeleted = (event) => {
+    const handleDelete = (event, reviewId, index) => {
         event.preventDefault()
-        this.props.handleSubmitWhenDeleted(props.review)
-            .then(response => this.setState({ text: "", rating: 1, error: "" }))
-            .catch(error => this.setState({ error: error.response.data.message }))
+        props.handleDelete(reviewId, index)
+            
     }
 
-    const { userId, created_at, text, rating, _id } = props.review
+    const { userId, created_at, text, rating, _id: reviewId } = props.review
+    const { index } = props
     const { _id: currentUserId } = props.user
 
+    console.log(userId);
     return (<div>
-        <p>{userId}</p>
+        <img src={userId.picture} alt='user' height='30px' />
+        <p>{userId.username}</p>
         <p>{created_at}</p>
         <p>{text}</p>
         <p>{rating}</p>
-        {userId === currentUserId && <button onClick={this.handleSubmitWhenDeleted} >Delete</button>}
+        {userId === currentUserId && <button onClick={(event) => handleDelete(event, reviewId, index)} >Delete</button>}
     </div>
     )
 }

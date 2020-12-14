@@ -37,7 +37,7 @@ class HotelDetails extends React.Component {
 
         reviewService.getAll(hotelId)
             .then(response => this.setState({ reviews: response, isLoading: false }))
-            .catch(error => this.setState({ error: error.response.data.message, isLoading: false }))
+            // .catch(error => this.setState({ error: error.response.data.message, isLoading: false }))
     }
 
     handleSubmit = (rating, text) => {
@@ -47,16 +47,15 @@ class HotelDetails extends React.Component {
         return pr
     }
 
-    handleSubmitWhenDeleted = () => {
-        const review = this.props.match.params.reviewId
-        console.log(review);
-        
-        reviewService.deleteOne(review)
-            .then(response => this.setState( { reviews: response} ))
-
+    handleDelete = (reviewId, index) => {
+        console.log(index);
+        reviewService.deleteOne(reviewId)
+            .then(response => {
+                const newReviews = [ ...this.state.reviews ]
+                newReviews.splice(index, 1)
+                this.setState( { reviews: [...newReviews] } )
+            })
     }
-
-
 
     render() {
         const { hotel } = this.state
@@ -75,7 +74,7 @@ class HotelDetails extends React.Component {
 
                 <hr />
 
-                {this.state.reviews.map((review) => <ReviewCard key={review._id} review={review} handleSubmitWhenDeleted={this.handleSubmitWhenDeleted} />)}
+                {this.state.reviews.map((review, index) => <ReviewCard key={review._id} index={index} review={review} handleDelete={this.handleDelete} />)}
 
                 <Footer />
             </div>
