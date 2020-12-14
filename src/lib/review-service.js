@@ -24,8 +24,8 @@ class ReviewService {
 
     }
 
-    deleteOne = (id) => {
-        const pr = this.api.delete(`/reviews/${id}`)
+    deleteOne = (reviewId) => {
+        const pr = this.api.delete(`/reviews/${reviewId}`)
             .then((response) => response.data)
     
         return pr;

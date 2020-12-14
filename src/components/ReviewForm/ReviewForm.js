@@ -1,5 +1,4 @@
 import React from 'react';
-import reviewService from '../../lib/review-service';
 
 class ReviewForm extends React.Component {
     state = {
@@ -10,22 +9,22 @@ class ReviewForm extends React.Component {
 
     handleChange = (event) => {
         const { name, value } = event.target
-        console.log(name, value);
         this.setState({ [name]: value }) 
     } 
 
     handleSubmit = (event) => {
         event.preventDefault()
-        reviewService.createOne(this.props.hotelId, { rating: this.state.rating, text: this.state.text})
-            .then(response => this.setState({ error: "" }))
+        this.props.handleSubmit(this.state.rating, this.state.text)
+            .then(response => this.setState({ text: "", rating: 1, error: "" }))
             .catch(error => this.setState({ error: error.response.data.message }))
+        
     }
-    
+
     render() {
         return (
             <div>
                 <h3>Leave a review</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} >
                     <label>
                         Rating:
                             <select name="rating" value={this.state.rating} onChange={this.handleChange}>
@@ -35,7 +34,7 @@ class ReviewForm extends React.Component {
                             <option value={4}>4</option>
                             <option value={5}>5</option>
                         </select>
-                        <input required type='textarea' name='text' value={this.state.text} onChange={this.handleChange} />
+                        <textarea required value={this.state.text} name='text' onChange={this.handleChange} />
                         <input type="submit" value="Save" />
                     </label>
                 </form>
