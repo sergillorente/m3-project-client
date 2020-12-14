@@ -8,22 +8,16 @@ class ReviewService {
       });
     }
 
-    getOne = (hotelId) => {
-        const pr = this.api.get(`/review/${id}`, { hotelId} )
-        .then((response) => response.data)
-    
-        return pr;
-    }
 
-    getOne = (hotelId, userId) => {
-        const pr = this.api.get('/review/${id}/${id}', hotelId, userId)
+    getAll = (hotelId) => {
+        const pr = this.api.get(`/reviews/${hotelId}`)
         .then((response) => response.data)
 
         return pr;
     }
 
-    updateOne = (reviewId) => {
-        const pr = this.api.post('/review/${id}', reviewId)
+    createOne = (hotelId, updates) => {
+        const pr = this.api.post(`/reviews/${hotelId}`, updates)
         .then((response) => response.data)
 
         return pr;
@@ -31,7 +25,7 @@ class ReviewService {
     }
 
     deleteOne = (id) => {
-        const pr = this.api.delete(`/review/${id}` )
+        const pr = this.api.delete(`/reviews/${id}`)
             .then((response) => response.data)
     
         return pr;

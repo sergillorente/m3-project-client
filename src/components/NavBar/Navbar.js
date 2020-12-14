@@ -5,16 +5,16 @@ import './NavBar.css'
 
 class Navbar extends React.Component {
   render() {
-    const { user, logout, isLoggedin } = this.props;
+    const { user, logout, isLoggedIn } = this.props;
     return (
       <nav className="navbar">
         <Link to={'/'}>
           <img src='/images/logo.png' alt="logo icon" className='logo' />
         </Link>
-        {this.props.isLoggedIn ? (
+        {isLoggedIn ? (
           <>
-            <p>{this.props.user && this.props.user.username}</p>
-            <button onClick={this.props.logout}>Logout</button>
+            <p>{user && user.username}</p>
+            <button onClick={logout}>Logout</button>
           </>
         ) : (
           <>

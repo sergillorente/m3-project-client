@@ -10,7 +10,6 @@ class SearchBar extends React.Component {
 
     handleChange = event => {
         const { name, value } = event.target;
-        console.log('name ==>', name, 'value==>', value);
         this.setState({ [name]: value })
     };
 

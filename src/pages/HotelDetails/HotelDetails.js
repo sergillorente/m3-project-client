@@ -5,13 +5,15 @@ import NavBar from '../../components/NavBar/NavBar';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import { withAuth } from '../../context/auth-context';
-import hotelService from './../../lib/hotel-service'
+import hotelService from './../../lib/hotel-service';
+import reviewService from './../../lib/review-service';
 
 
 class HotelDetails extends React.Component {
 
     state = {
         hotel: {},
+        reviews: [],
         isLoading: true,
         error: false
     }
@@ -23,6 +25,9 @@ class HotelDetails extends React.Component {
             .then(response => this.setState({ hotel: response, isLoading: false }))
             .catch(error => this.setState({ error: error.response.data.message, isLoading: false }))
 
+        reviewService.getAll(hotelId)
+            .then(response => this.setState({ reviews: response, isLoading: false }))
+            .catch(error => this.setState({ error: error.response.data.message, isLoading: false }))
     }
 
     render() {
@@ -38,12 +43,12 @@ class HotelDetails extends React.Component {
                     <p>{hotel.description}</p>
                 </div>
 
-                <ReviewForm />
+                <ReviewForm hotelId={this.props.match.params.hotelId} />
 
                 <hr/>
-
-                <ReviewCard />
-                                
+                
+                {this.state.reviews.map((review) => <ReviewCard key={review._id} review={review}/>)}
+                
                 <Footer />
             </div>
         )
