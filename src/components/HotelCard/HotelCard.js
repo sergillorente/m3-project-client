@@ -2,17 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import HotelRating from '../HotelRating/HotelRating'
 
+import './HotelCard.css'
+
 const HotelCard = (props) => {
     const { image, title, district, category, description, _id } = props.hotel
     return (
-        <div>
-            <img src={image} alt='hotel information' />
-            <h3>{title}</h3>
-            <p>{district}</p>
+        <div className="hotel-card">
+            <img src={image} alt='hotel information' id='picture' />
+            <h3 id='title'>{title}</h3>
+            <p id='district'>{district}</p>
             <HotelRating category={category} />
-            <p>{`${description.slice(0,100)}...`}</p>
+            <p id="description">{`${description.slice(0,100)}...`}</p>
             <Link to={`/hotel-details/${_id}`}>
-                <button>Share your opinion</button>
+                <button id='button-share'>Share your opinion</button>
             </Link>
         </div>
     )

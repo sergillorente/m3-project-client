@@ -12,12 +12,45 @@
 }
 
 .navbar-button {
+    margin-top: 31px;
+    width: 65px;
+    height: 25px;
+    border: none;
+    color: black;
     background-color: rgb(238, 88, 65);
     border-radius: 8px;
-    color: black;
-    margin-top: 31px;
+    font-size: 14px;
+    outline: none;
 }
 
 #signup {
     margin-left: 137px;
 }
+
+.navbar-logout {
+    margin-top: 31px;
+    width: 60px;
+    height: 25px;
+    border: none;
+    color: black;
+    background-color: rgb(238, 88, 65);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* button {  
+    color: var(--color);
+    transition: 0.25s;
+    
+    &:hover,
+    &:focus { 
+      border-color: var(--hover);
+      color: #fff;
+    }
+  }
+.navbar-logout:hover,
+.navbar-logout {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+} */

@@ -8,11 +8,10 @@ import { IconDesign } from '../../styles/elements'
 
 function Footer(props) {
 
-    return (
-        
+    return props.isLoggedIn ? (
         <IconDesign>
-        {props.isLoggedIn ? (
-            <div>
+
+            <div className="footer">
                 <Link to='/hotels'>
                     <div>
                         <img src='/images/hotel.png' alt="hotel icon" />
@@ -27,20 +26,17 @@ function Footer(props) {
                 </Link>
 
             </div>
-
-        ) : (<div>
-                <Link to='/hotels'>
-                    <div>
-                        <img src='/images/hotel.png' alt="hotel icon" />
-                        <p className="text-color">HOTELS</p>
-                    </div>
-                </Link>
-            </div>
-            )}
         </IconDesign>
+    ) : (<div className="footer">
+        <Link to='/hotels'>
+            <div>
+                <img src='/images/hotel.png' alt="hotel icon" />
+                <p className="text-color">HOTELS</p>
+            </div>
+        </Link>
+    </div>
+        )
 
-        
-    )
 }
 
 export default withAuth(Footer);

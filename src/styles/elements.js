@@ -1,24 +1,37 @@
 import styled from 'styled-components'
 
 export const StyledPresentationButton = styled.button`
-    font-size: 22px;
-    padding: 12px;
     margin-bottom: 127px;
     margin-top: 58px;
-    border-radius: 11px;
-    background-color: #8bc34a;
+    margin-left: 106px;
+    witdh: 200px;
+    height: 50px;
+    border: none;
     color: black;
-    border: 1px solid;
-    &:hover (
-        background-color: #5a9216;
-        color: black;
-    )
+    background-color: #8bc34a;
+    border-radius: 11px;
+    box-shadow: inset 0 0 0 0 #5a9216;
+    transition: ease-out 0.3s;
+    font-size: 22px;
+    outline: none;
+    &:hover {
+        box-shadow: inset 200px 0 0 0 #5a9216;
+        cursor: pointer;
+        color: white; 
+    }
 `
-export const TextPresentation = styled.p`
+export const TextPresentation = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     font-size: 19px;
     text-align: center;
     color: black;
-    margin: 0 30px 0 30px;
+    border: 1px solid black;
+    { /* margin: 0 195px 0 30px; */}
 `
 
 export const AsideText = styled.p`  

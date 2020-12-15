@@ -1,0 +1,38 @@
+.hotel-card {
+    display: flex;
+    flex-direction: column;
+    margin-left: 63px;
+    margin-right: 62px;
+}
+
+#picture {
+    max-width: 250px;
+    height: auto;
+    margin-top: 53px;
+    border-radius: 13px;
+}
+
+#title {
+    font-size: 19px;
+}
+
+#district {
+    margin-bottom: -15px;
+    font-size: 17px;
+}
+
+#description {
+    font-size: 16px;
+}
+
+#button-share {
+    width: 150px;
+    height: 30px;
+    border: none;
+    color: black;
+    background-color: #8bc34a;
+    border-radius: 11px;
+    font-size: 15px;
+    outline: none;
+    margin-left: 43px;
+}
