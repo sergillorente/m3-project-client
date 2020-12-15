@@ -2,7 +2,7 @@
     background-color: rgb(213, 213, 213);
 } */
 .presentation-logo{
-    max-width: 344px;
+    max-width: 375px;
     height: auto;
 }
 
@@ -16,5 +16,5 @@ text {
 
 .project {
     font-weight: bold;
-    margin-left: 113px;
+    margin-left: 121px;
 }

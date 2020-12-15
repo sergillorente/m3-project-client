@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledPresentationButton = styled.button`
     margin-bottom: 127px;
     margin-top: 58px;
-    margin-left: 106px;
+    margin-left: 121px;
     witdh: 200px;
     height: 50px;
     border: none;
@@ -31,13 +31,6 @@ export const TextPresentation = styled.div`
     text-align: center;
     color: black;
     border: 1px solid black;
-    margin-right: 8%;
-`
-
-export const AsideText = styled.p`  
-    font-size: 19px;
-    text-align: center;
-    color: black;
 `
 
 export const IconDesign = styled.div`
