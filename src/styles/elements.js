@@ -31,7 +31,7 @@ export const TextPresentation = styled.div`
     text-align: center;
     color: black;
     border: 1px solid black;
-    { /* margin: 0 195px 0 30px; */}
+    margin-right: 8%;
 `
 
 export const AsideText = styled.p`  
