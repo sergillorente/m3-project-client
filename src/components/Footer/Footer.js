@@ -1,12 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
+
 import './Footer.css'
 
+import { IconDesign } from '../../styles/elements'
+
 function Footer(props) {
-    
-    return props.isLoggedIn ? (
-            <div className="footer">
+
+    return (
+        
+        <IconDesign>
+        {props.isLoggedIn ? (
+            <div>
                 <Link to='/hotels'>
                     <div>
                         <img src='/images/hotel.png' alt="hotel icon" />
@@ -21,7 +27,8 @@ function Footer(props) {
                 </Link>
 
             </div>
-        ) : (<div className="footer">
+
+        ) : (<div>
                 <Link to='/hotels'>
                     <div>
                         <img src='/images/hotel.png' alt="hotel icon" />
@@ -29,15 +36,11 @@ function Footer(props) {
                     </div>
                 </Link>
             </div>
-        )
-    }
+            )}
+        </IconDesign>
+
+        
+    )
+}
 
 export default withAuth(Footer);
-
-// there will be 2 footers:
-
-// One including only the background color for the pages:
-// Hotels (when the user is not logged in), Signup, Login
-
-// Second including the whole footer:
-// Hotels( when the user is logged in), HotelDetails, Profile

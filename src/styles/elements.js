@@ -26,3 +26,14 @@ export const AsideText = styled.p`
     text-align: center;
     color: black;
 `
+
+export const IconDesign = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 139%;
+    text-align: center;
+    background-color: rgb(138, 137, 136);
+    color: black;
+    font-size: 14px;
+`

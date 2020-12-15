@@ -10,11 +10,6 @@ import Presentation from './pages/Presentation/Presentation'
 import Profile from './pages/Profile/Profile';
 import Signup from './pages/Signup/Signup';
 
-// import components
-// import Footer from './components/Footer/Footer';
-// import HotelCard from './components/HotelCard/HotelCard';
-// import Navbar from './components/NavBar/Navbar';
-
 // import routes
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
