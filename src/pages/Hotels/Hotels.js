@@ -6,6 +6,7 @@ import hotelService from './../../lib/hotel-service'
 import HotelCard from '../../components/HotelCard/HotelCard';
 import SearchBar from '../../components/SearchBar/SearchBar'
 
+
 class Hotels extends React.Component {
     state = {
         hotels: [],

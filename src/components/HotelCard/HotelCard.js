@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import HotelRating from '../HotelRating/HotelRating'
 
 import './HotelCard.css'
+import '../HotelRating/HotelRating.css'
 
 const HotelCard = (props) => {
     const { image, title, district, category, description, _id } = props.hotel

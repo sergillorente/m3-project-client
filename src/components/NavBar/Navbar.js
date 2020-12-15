@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
 import './NavBar.css'
 
-class Navbar extends React.Component {
+class NavBar extends React.Component {
   render() {
     const { user, logout, isLoggedIn } = this.props;
     return (
@@ -32,4 +32,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default withAuth(Navbar);
+export default withAuth(NavBar);

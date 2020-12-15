@@ -15,7 +15,6 @@ import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
 
 
-
 class App extends Component {
   render() {
     return (

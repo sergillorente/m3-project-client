@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import HotelRating from '../../components/HotelRating/HotelRating';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar'
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import { withAuth } from '../../context/auth-context';
