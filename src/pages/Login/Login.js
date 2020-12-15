@@ -4,6 +4,8 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import { withAuth } from './../../context/auth-context';
 
+import './Login.css'
+
 class Login extends Component {
   state = { email: "", password: "" };
 
@@ -25,24 +27,24 @@ class Login extends Component {
     return (
       <div>
       <NavBar />
-        <h1>Login</h1>
+        <h1 id="login-title">Login</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="login-form" onSubmit={this.handleFormSubmit}>
           
-          <label>Email:</label>
-          <input required type="email" name="email" value={email} onChange={this.handleChange}/>
+          <label id="email">Email:</label>
+          <input id="input-form" required type="email" name="email" value={email} onChange={this.handleChange}/>
 
-          <label>Password:</label>
-          <input required type="password" name="password" value={password} onChange={this.handleChange} />
+          <label id="password">Password:</label>
+          <input id="input-form" required type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="Login" />
+          <input id="login-btn" type="submit" value="Login" />
         </form>
 
         <div>
           {this.props.error && <p>{this.props.error}</p>}
         </div>
 
-        <div>
+        <div id="to-signup">
           <p>or <Link to="/signup"> Sign up</Link> if you don't have an account</p>
         </div>
 

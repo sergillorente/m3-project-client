@@ -1,0 +1,49 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 16%;
+    font-size: 18px;
+}
+
+#login-title {
+    margin-left: 34%;
+    margin-top: 23%;
+}
+
+#email {
+    margin-right: 102px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+#password {
+    margin-right: 78px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+#input-form {
+    border-radius: 16px;
+    width: 43%;
+}
+
+#login-btn {
+    margin-top: 14%;
+    width: 150px;
+    height: 40px;
+    border: none;
+    color: black;
+    background-color: #8bc34a;
+    border-radius: 11px;
+    font-size: 22px;
+    outline: none;
+}
+
+#to-signup {
+    margin-top: 15%;
+    margin-left: 14%;
+}
