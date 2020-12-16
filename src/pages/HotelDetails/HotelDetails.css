@@ -1,0 +1,22 @@
+.hotel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 62px;
+}
+
+#picture {
+    border-radius: 20px;
+}
+
+#title {
+    font-size: 21px;
+}
+
+#district {
+    font-size: 18px;
+}
+
+#description {
+    font-size: 17px;
+}

@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+
+#icon-hotels {
+    margin-top: 12px;
+    margin-right: 85px;
+}
+
+#icon-profile {
+    margin-top: 12px;
+}

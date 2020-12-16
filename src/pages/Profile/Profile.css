@@ -1,4 +1,62 @@
 .default-pic {
-    max-width: 200px;
+    max-width: 135px;
     height: auto;
+    max-width: 135px;
+    height: auto;
+    margin-left: 122px;
+    border-radius: 14%;
+    border: 6px solid white;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#profile-title {
+    margin-left: 34%;
+    margin-top: 8%;
+}
+
+#update {
+    margin-left: 86px;
+}
+
+#username {
+    margin-right: 73px;
+    margin-bottom: 3px;
+}
+
+#email {
+    margin-right: 102px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+#password {
+    margin-right: 78px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+#input-form {
+    border-radius: 16px;
+    width: 43%;
+}
+
+#profile-btn {
+    margin-top: 14%;
+    width: 137px;
+    height: 33px;
+    border: none;
+    color: black;
+    background-color: #8bc34a;
+    border-radius: 11px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid black;
 }

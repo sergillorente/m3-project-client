@@ -8,6 +8,8 @@ import { withAuth } from '../../context/auth-context';
 import hotelService from './../../lib/hotel-service';
 import reviewService from './../../lib/review-service';
 
+import './HotelDetails.css'
+
 
 class HotelDetails extends React.Component {
 
@@ -60,12 +62,12 @@ class HotelDetails extends React.Component {
         return (
             <div>
                 <NavBar />
-                <div>
-                    <img src={hotel.image} alt={hotel} />
-                    <h1>{hotel.title}</h1>
-                    <h3>{hotel.district}</h3>
+                <div className="hotel">
+                    <img id="picture" src={hotel.image} alt={hotel} />
+                    <h1 id="title">{hotel.title}</h1>
+                    <h3 id="district">{hotel.district}</h3>
                     <HotelRating category={hotel.category} />
-                    <p>{hotel.description}</p>
+                    <p id="description">{hotel.description}</p>
                 </div>
 
                 <ReviewForm handleSubmit={this.handleSubmit} />

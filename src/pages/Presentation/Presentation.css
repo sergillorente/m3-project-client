@@ -4,6 +4,7 @@
 .presentation-logo{
     max-width: 375px;
     height: auto;
+    border-radius: 50%;
 }
 
 text {

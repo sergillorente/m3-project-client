@@ -12,13 +12,13 @@ function Footer(props) {
         <IconDesign>
 
             <div className="footer">
-                <Link to='/hotels'>
+                <Link id="icon-hotels" to='/hotels'>
                     <div>
                         <img src='/images/hotel.png' alt="hotel icon" />
                         <p className="text-color">HOTELS</p>
                     </div>
                 </Link>
-                <Link to='/profile'>
+                <Link id="icon-profile" to='/profile'>
                     <div>
                         <img src='/images/profile-user.png' alt="profile icon" />
                         <p className="text-color">PROFILE</p>

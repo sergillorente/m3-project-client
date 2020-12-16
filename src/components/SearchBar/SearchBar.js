@@ -21,11 +21,11 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.handleChange} />
-                    <label>
+                <form className="search-bar" onSubmit={this.handleSubmit}>
+                    <input id="search" type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.handleChange} />
+                    <label id="separation">
                         Filter by district:
-                        <select name="district" value={this.state.district} onChange={this.handleChange}>
+                        <select id="filter-district" name="district" value={this.state.district} onChange={this.handleChange}>
                             <option value="">Show All</option>
                             <option value="Sants-Montjuïc">Sants-Montjuïc</option>
                             <option value="Horta-Guinardó">Horta-Guinardó</option>
@@ -38,18 +38,18 @@ class SearchBar extends React.Component {
                             <option value="Sant Martí">Sant Martí</option>
                         </select>
                     </label>
-                    <label>
+                    <label id="separation">
                         Filter by category:
-                        <select name="category" value={this.state.category} onChange={this.handleChange}>
+                        <select id="filter-category" name="category" value={this.state.category} onChange={this.handleChange}>
                             <option value="">Show All</option>
                             <option value={3}>3-stars</option>
                             <option value={4}>4-stars</option>
                             <option value={5}>5-stars</option>
                         </select>
                     </label>
-                    <input type="submit" value="Search" />
+                    <input id="search-btn" type="submit" value="Search" />
                 </form>
-                <button onClick={this.props.removeFilters}>Remove filters</button>
+                <button id="remove" onClick={this.props.removeFilters}>Remove filters</button>
             </div>
         )
     }

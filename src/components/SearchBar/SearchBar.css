@@ -1,0 +1,49 @@
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#search {
+    width: 145px;
+    height: 18px;
+    border-radius: 6px;
+}
+
+#separation {
+    margin-top: 8px;
+}
+
+#filter-district {
+    width: 74px;
+    margin-left: 43px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+#filter-category {
+    width: 74px;
+    margin-left: 33px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+#search-btn {
+    width: 80px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 45px;
+    border-radius: 16px;
+    color: black;
+    background-color: #8bc34a;
+}
+
+#remove {
+    
+    margin-left: 209px;
+    height: 22px;
+    border-radius: 6px;
+    color: black;
+    background-color: #8bc34a;
+}

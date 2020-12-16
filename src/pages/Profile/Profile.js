@@ -37,21 +37,21 @@ class Profile extends React.Component {
             <div>
                 <NavBar />
 
-                <h1>PROFILE</h1>
+                <h1 id="profile-title">PROFILE</h1>
                 <img src={this.props.user.picture} alt="default" className="default-pic" />
 
-                <h3>Update user information:</h3>
-                <form onSubmit={this.handleSubmitForm}>
-                    <label>Username:</label>
-                    <input required type="text" name="username" value={username} placeholder="Write..." onChange={this.handleChange} />
+                <h3 id="update">Update user information:</h3>
+                <form className="profile-form" onSubmit={this.handleSubmitForm}>
+                    <label id="username">Username:</label>
+                    <input id="input-form" required type="text" name="username" value={username} placeholder="Write..." onChange={this.handleChange} />
 
-                    <label>Email:</label>
-                    <input type="email" name="email" placeholder={this.props.user.email} disabled />
+                    <label id="email">Email:</label>
+                    <input id="input-form" type="email" name="email" placeholder={this.props.user.email} disabled />
 
-                    <label>Password:</label>
-                    <input type="password" name="password" value={password} placeholder="*****" onChange={this.handleChange} />
+                    <label id="password">Password:</label>
+                    <input id="input-form" type="password" name="password" value={password} placeholder="*****" onChange={this.handleChange} />
 
-                    <input type="submit" value="Save Changes" />
+                    <input id="profile-btn" type="submit" value="Save Changes" />
                 </form>
 
                 <div>
