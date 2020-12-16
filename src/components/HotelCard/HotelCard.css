@@ -36,3 +36,8 @@
     outline: none;
     margin-left: 43px;
 }
+
+#rating {
+    display: flex;
+    flex-direction: row;
+}

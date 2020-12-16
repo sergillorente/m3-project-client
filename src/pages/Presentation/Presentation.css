@@ -2,7 +2,8 @@
     background-color: rgb(213, 213, 213);
 } */
 .presentation-logo{
-    max-width: 375px;
+    max-width: 310px;
+    margin-left: 33px;
     height: auto;
     border-radius: 50%;
 }

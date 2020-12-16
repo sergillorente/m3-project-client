@@ -4,13 +4,21 @@
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(149, 143, 142);
 }
 
 #icon-hotels {
     margin-top: 12px;
-    margin-right: 85px;
+    margin-right: 5px;
+    color: black;
+    text-decoration: none;
 }
 
 #icon-profile {
     margin-top: 12px;
+    color: black;
+    text-decoration: none;
 }

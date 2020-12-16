@@ -17,7 +17,7 @@ const ReviewCard = (props) => {
 
     return (
     <div className="review">
-        <img id="picture" src={userId.picture} alt='user' />
+        <img id="picture" src='/images/default-profile.jpg' alt='user' /> {/* Backlog --- Add the picture of every single user who updates its picture profile // userId.picture */}
         <p>{userId.username}</p>
         <p>{created_at}</p>
         <p>{text}</p>

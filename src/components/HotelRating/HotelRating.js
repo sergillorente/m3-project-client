@@ -1,10 +1,13 @@
 import React from 'react'
+import StarRateIcon from '@material-ui/icons/StarRate';
+
 
 const HotelRating = (props) => {
-    return [1,2,3,4,5].map(star => {
-        if (star <= props.category) return <img id='yellow-star' key={star} alt='star' src='/images/yellow-star.jpeg' />
-        return <img id='grey-star' key={star} alt='star' src='/images/grey-star.png' />
-        }
+    return (
+        <div id="rating">
+            {[1, 2, 3, 4, 5].map(star => star <= props.category ? <StarRateIcon key={star} style={{ fill: "yellow" }} />
+                : <StarRateIcon key={star} color="action" />)}
+        </div>
     )
 }
 

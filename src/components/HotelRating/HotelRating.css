@@ -1,9 +1,6 @@
-#yellow-star {
-    max-width: 28px;
-    height: auto;
-}
-
-#grey-star {
-    max-width: 28px;
-    height: auto;
+#rating {
+    display: flex;
+    flex-direction: row;
+    margin-left: 127px;
+    margin-top: 15px;
 }
