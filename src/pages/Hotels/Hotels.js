@@ -5,6 +5,7 @@ import { withAuth } from '../../context/auth-context';
 import hotelService from './../../lib/hotel-service'
 import HotelCard from '../../components/HotelCard/HotelCard';
 import SearchBar from '../../components/SearchBar/SearchBar'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 
 class Hotels extends React.Component {
@@ -50,7 +51,7 @@ class Hotels extends React.Component {
             <div>
                 <NavBar />
                 {this.state.isLoading
-                    ? <p>It's loading...</p>
+                    ? <CircularProgress color="secondary" />
                     : <div>
                         {this.props.isLoggedIn ? 
                             <SearchBar

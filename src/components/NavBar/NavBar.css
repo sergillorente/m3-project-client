@@ -43,19 +43,3 @@
     font-size: 14px;
     outline: none;
 }
-
-/* button {  
-    color: var(--color);
-    transition: 0.25s;
-    
-    &:hover,
-    &:focus { 
-      border-color: var(--hover);
-      color: #fff;
-    }
-  }
-.navbar-logout:hover,
-.navbar-logout {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-} */
