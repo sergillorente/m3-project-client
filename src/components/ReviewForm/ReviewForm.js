@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ReviewForm.css'
+
 class ReviewForm extends React.Component {
     state = {
         rating: 1,
@@ -22,20 +24,20 @@ class ReviewForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <h3>Leave a review</h3>
+            <div className="detail-review">
+                <h3 id="title-review">Leave a review</h3>
                 <form onSubmit={this.handleSubmit} >
                     <label>
                         Rating:
-                            <select name="rating" value={this.state.rating} onChange={this.handleChange}>
+                            <select id="rating-num" name="rating" value={this.state.rating} onChange={this.handleChange}>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
                             <option value={3}>3</option>
                             <option value={4}>4</option>
                             <option value={5}>5</option>
                         </select>
-                        <textarea required value={this.state.text} name='text' onChange={this.handleChange} />
-                        <input type="submit" value="Save" />
+                        <textarea id="text" required value={this.state.text} name='text' onChange={this.handleChange} />
+                        <input id="submit-btn" type="submit" value="Save" />
                     </label>
                 </form>
                 {this.state.error && <p>{this.state.error}</p>}

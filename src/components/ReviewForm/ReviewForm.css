@@ -1,0 +1,31 @@
+.detail-review {
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+    margin-right: 62px;
+}
+
+#title-review {
+    margin-left: 64px
+}
+
+#rating-num {
+    margin-bottom: 5px;
+}
+
+#text {
+    width: 244px;
+    height: 47px;
+    border-radius: 5px
+
+}
+
+#submit-btn {
+    margin-top: 15px;
+    margin-left: 85px;
+    width: 68px;
+    height: 25px;
+    color: black;
+    background-color: #8bc34a;
+    border-radius: 11px;
+}
