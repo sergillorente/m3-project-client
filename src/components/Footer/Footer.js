@@ -28,10 +28,10 @@ function Footer(props) {
             </div>
         </IconDesign>
     ) : (<div className="footer">
-        <Link to='/hotels'>
+        <Link id="icon-hotels-logout" to='/hotels'>
             <div>
-                <img src='/images/hotel.png' alt="hotel icon" />
-                <p className="text-color">HOTELS</p>
+                <img id="icon-hotel" src='/images/hotel.png' alt="hotel icon" />
+                <p id="text-color-logout">HOTELS</p>
             </div>
         </Link>
     </div>

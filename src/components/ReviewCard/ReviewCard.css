@@ -5,8 +5,8 @@
     margin-right: 62px;
 }
 
-#picture {
-    max-width: 30;
+.picture {
+    max-width: 30px;
     height: auto;
 }
 #delete-btn {
