@@ -36,6 +36,12 @@
     outline: none;
     margin-left: 43px;
 }
+#button-share:hover {
+    width: 150px;
+    height: 30px;
+    background-color: #5a9216;
+    color: white;
+}
 
 #rating {
     display: flex;

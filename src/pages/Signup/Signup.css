@@ -14,21 +14,29 @@
     margin-top: 23%;
 }
 
-#username {
+#username-s {
     margin-right: 73px;
     margin-bottom: 3px;
 }
 
-#email {
+#email-s {
     margin-right: 102px;
     margin-top: 20px;
     margin-bottom: 3px;
 }
+#email-s::after {
+    content: '*';
+    color: red;
+}
 
-#password {
+#password-s {
     margin-right: 78px;
     margin-top: 20px;
     margin-bottom: 3px;
+}
+#password-s::after {
+    content: '*';
+    color: red;
 }
 
 #input-form {

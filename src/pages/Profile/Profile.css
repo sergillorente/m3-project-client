@@ -30,17 +30,29 @@
     margin-right: 73px;
     margin-bottom: 3px;
 }
+#username::after {
+    content: '*';
+    color: red;
+}
 
 #email {
     margin-right: 102px;
     margin-top: 20px;
     margin-bottom: 3px;
 }
+/* #email::after {
+    content: '*';
+    color: red;
+} */
 
 #password {
     margin-right: 78px;
     margin-top: 20px;
     margin-bottom: 3px;
+}
+#password::after {
+    content: '*';
+    color: red;
 }
 
 #input-form {

@@ -14,16 +14,24 @@
     margin-top: 23%;
 }
 
-#email {
+#email-l {
     margin-right: 102px;
     margin-top: 20px;
     margin-bottom: 3px;
 }
+#email-l::after {
+    content: '*';
+    color: red;
+}
 
-#password {
+#password-l {
     margin-right: 78px;
     margin-top: 20px;
     margin-bottom: 3px;
+}
+#password-l::after {
+    content: '*';
+    color: red;
 }
 
 #input-form {

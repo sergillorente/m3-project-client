@@ -11,7 +11,7 @@ export const StyledPresentationButton = styled.button`
     background-color: #8bc34a;
     border-radius: 11px;
     box-shadow: inset 0 0 0 0 #5a9216;
-    transition: ease-out 0.3s;
+    transition: ease-out .3s;
     font-size: 22px;
     outline: none;
     &:hover {
