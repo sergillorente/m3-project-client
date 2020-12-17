@@ -43,7 +43,6 @@ class Hotels extends React.Component {
 
     removeFilters = () => {
         this.setState({ filteredHotels: this.state.hotels })
-        console.log(this.state.filtredHotels);
     }
 
     render() {

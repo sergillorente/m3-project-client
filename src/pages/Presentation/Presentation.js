@@ -4,7 +4,6 @@ import './Presentation.css'
 
 import { StyledPresentationButton } from './../../styles/elements'
 import { TextPresentation } from './../../styles/elements'
-// import { AsideText } from './../../styles/elements'
 
 
 function Presentation () {

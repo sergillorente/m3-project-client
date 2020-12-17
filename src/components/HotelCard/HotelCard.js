@@ -7,6 +7,7 @@ import '../HotelRating/HotelRating.css'
 
 const HotelCard = (props) => {
     const { image, title, district, category, description, _id } = props.hotel
+    
     return (
         <div className="hotel-card">
             <img src={image} alt='hotel information' id='picture' />

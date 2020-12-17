@@ -59,6 +59,7 @@ class HotelDetails extends React.Component {
 
     render() {
         const { hotel } = this.state
+        
         return (
             <div>
                 <NavBar />
