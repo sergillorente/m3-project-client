@@ -30,7 +30,11 @@ export const TextPresentation = styled.div`
     font-size: 19px;
     text-align: center;
     color: black;
-    border: 1px solid black;
+    width: 328px;
+    margin-left: 22px;
+    border: 5px solid grey;
+    border-radius: 49px;
+    height: auto;
 `
 
 export const IconDesign = styled.div`
