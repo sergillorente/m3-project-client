@@ -6,7 +6,7 @@ import { Switch } from 'react-router-dom';
 import HotelDetails from './pages/HotelDetails/HotelDetails';
 import Hotels from './pages/Hotels/Hotels';
 import Login from './pages/Login/Login';
-import Presentation from './pages/Presentation/Presentation'
+import Presentation from './pages/Presentation';
 import Profile from './pages/Profile/Profile';
 import Signup from './pages/Signup/Signup';
 
