@@ -6,8 +6,8 @@ function Home () {
         <div id="home">
             <img className= "presentation-logo" src="/images/logo.png" alt= 'logo' />
             <div className="p-comments">
-                <p>Welcome to Oh! Review, the place where you will find the most known hotels in Barcelona.</p>
-                <p>Reviews, community and much more...</p>
+                <p id="welcome">Welcome to Oh! Review, the place where you will find the most known hotels in Barcelona.</p>
+                <p id="more">Reviews, community and much more...</p>
             </div>
                 <Link to="/hotels">
                     <button className="ui primary button update">START NOW</button>
