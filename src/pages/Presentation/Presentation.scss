@@ -1,0 +1,50 @@
+#home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: url(https://static.hosteltur.com/app/public/uploads/img/articles/2020/05/25/L_121711_l-132214-39d1ee00-z.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+    }
+
+    .update {
+        position: relative;
+    }
+}
+
+.presentation-logo{
+    position: relative;
+    max-width: 36%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 12%;
+}
+
+.p-comments {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 7%;
+    max-width: 58%;
+    margin: 4% 0%;
+    font-size: 15px;
+}
+
+.project {
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 16%;
+}

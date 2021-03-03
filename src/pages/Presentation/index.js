@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Home';
-import './Presentation.css';
+import './Presentation.scss';
 
 const Presentation = () => {
     return (
