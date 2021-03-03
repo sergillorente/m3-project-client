@@ -17,7 +17,7 @@ const HotelCard = (props) => {
             <div>
                 <div>
                     <p id='district'>{district}</p>
-                    <HotelRating category={category} />
+                    <HotelRating className="rating" category={category} />
                 </div>
                 <p id="description">{`${description.slice(0,100)}...`}</p>
                 <Link to={`/hotel-details/${_id}`}>
