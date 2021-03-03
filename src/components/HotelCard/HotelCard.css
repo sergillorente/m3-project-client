@@ -1,8 +1,8 @@
 .hotel-card {
     display: flex;
     flex-direction: column;
-    margin-left: 64px;
-    margin-right: 62px;
+    align-items: center;
+    text-align: center;
 }
 
 #picture {
@@ -17,12 +17,15 @@
 }
 
 #district {
-    margin-bottom: -15px;
+    margin-top: 4%;
+    margin-bottom: -22px;
     font-size: 17px;
 }
 
 #description {
     font-size: 16px;
+    margin-top: 5%;
+    width: 43%;
 }
 
 #button-share {
@@ -34,7 +37,8 @@
     border-radius: 11px;
     font-size: 15px;
     outline: none;
-    margin-left: 43px;
+    margin-left: 7%;
+    margin-top: 2%;
 }
 #button-share:hover {
     width: 150px;

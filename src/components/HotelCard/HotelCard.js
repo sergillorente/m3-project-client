@@ -10,14 +10,20 @@ const HotelCard = (props) => {
     
     return (
         <div className="hotel-card">
-            <img src={image} alt='hotel information' id='picture' />
-            <h3 id='title'>{title}</h3>
-            <p id='district'>{district}</p>
-            <HotelRating category={category} />
-            <p id="description">{`${description.slice(0,100)}...`}</p>
-            <Link to={`/hotel-details/${_id}`}>
-                <button id='button-share'>Share your opinion</button>
-            </Link>
+            <div>
+                <img src={image} alt='hotel information' id='picture' />
+                <h3 id='title'>{title}</h3>
+            </div>
+            <div>
+                <div>
+                    <p id='district'>{district}</p>
+                    <HotelRating category={category} />
+                </div>
+                <p id="description">{`${description.slice(0,100)}...`}</p>
+                <Link to={`/hotel-details/${_id}`}>
+                    <button id='button-share'>Share your opinion</button>
+                </Link>
+            </div>
         </div>
     )
 }
