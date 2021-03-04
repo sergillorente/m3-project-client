@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import HotelRating from '../HotelRating/HotelRating'
 
-import './HotelCard.css'
+import './HotelCard.scss'
 import '../HotelRating/HotelRating.css'
 
 const HotelCard = (props) => {

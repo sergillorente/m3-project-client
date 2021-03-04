@@ -5,7 +5,7 @@
     text-align: center;
     border: 3px solid black;
     border-radius: 6%;
-    box-shadow: 5px 5px 15px greenyellow;
+    box-shadow: 5px 5px 15px;
     padding-bottom: 5%;
     width: 48%;
     margin-left: 27%;
@@ -14,10 +14,12 @@
 }
 
 #picture {
+    position: relative;
     max-width: 250px;
     height: auto;
     margin-top: 53px;
     border-radius: 13px;
+    border: dashed white;
 }
 
 #title {

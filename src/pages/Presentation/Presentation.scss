@@ -21,6 +21,8 @@
 
     .update {
         position: relative;
+        margin-top: 19%;
+        padding: 14px 23px;
     }
 }
 
@@ -35,15 +37,12 @@
 .p-comments {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 7%;
     max-width: 58%;
     margin: 4% 0%;
     font-size: 15px;
-
-    
 }
-
 #welcome {
     line-height: 1.6em;
     letter-spacing: .3px;
@@ -52,7 +51,6 @@
     box-shadow: 5px 5px 15px;
     padding: 10px 16px;
 }
-
 #more {
     background-color: rgba(255, 255, 255, .2);
     border-radius: 5%;
