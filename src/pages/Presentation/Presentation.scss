@@ -30,7 +30,7 @@ $light-gray:#b7b7b7;
         margin-top: 19%;
         padding: 14px 23px;
         z-index: 1;
-        background: rgb(122, 131, 119);
+        background: $dark-gray;
 
         &::before {
             content: '';
@@ -39,7 +39,7 @@ $light-gray:#b7b7b7;
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgb(100, 163, 70);
+            background: $dark-green;
             z-index: -1;
             border-radius: 6%;
 

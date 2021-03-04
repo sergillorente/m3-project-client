@@ -1,5 +1,7 @@
+@import '../../pages/Presentation/Presentation.scss';
+
 .navbar {
-    background-color: #4fc3f7;
+    background-color: $dark-green;
     display: flex;
     justify-content: space-around;
 }
@@ -14,24 +16,24 @@
 
 .navbar-button {
     margin-top: 31px;
-    width: 65px;
-    height: 25px;
+    width: 82px;
+    height: 28px;
     border: none;
     color: black;
-    background-color: rgb(238, 88, 65);
+    background-color: $light-gray;
     border-radius: 8px;
     font-size: 14px;
     outline: none;
     cursor: pointer;
 
     &:hover {
-        background-color: rgb(250, 68, 40);
+        background-color: $dark-gray;
         color: white;
     }
 }
 
 #signup {
-    margin-left: 137px;
+    margin-left: 240%;
 }
 
 .username-name {
