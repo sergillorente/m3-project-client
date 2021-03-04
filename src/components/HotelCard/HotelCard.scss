@@ -10,7 +10,7 @@
     width: 48%;
     margin-left: 27%;
     margin-top: 6%;
-    background-color: hotpink;
+    background-color: rgb(241, 221, 181);
 }
 
 #picture {
@@ -28,7 +28,7 @@
 
 #district {
     margin-top: 4%;
-    margin-right: 18%;
+    margin-right: 37%;
     margin-bottom: -22px;
     font-size: 17px;
 }
@@ -39,11 +39,11 @@
 
 #description {
     font-size: 16px;
-    margin: 3% 28%;
+    margin: 3% 9%;
 }
 
 #button-share {
-    width: 25%;
+    width: 49%;
     height: 38px;
     border: none;
     color: black;
@@ -51,13 +51,14 @@
     border-radius: 11px;
     font-size: 15px;
     outline: none;
-}
 
-#button-share:hover {
-    width: 25%;
-    height: 38px;
-    background-color: #5a9216;
-    color: white;
+    &:hover {
+        width: 49%;
+        height: 38px;
+        background-color: #5a9216;
+        color: white;
+        cursor: pointer; 
+    }
 }
 
 #rating {

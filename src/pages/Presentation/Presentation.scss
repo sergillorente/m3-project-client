@@ -1,3 +1,9 @@
+$dark-green:#006666;
+$light-green:#9dbcbc;
+$cream:#fff5bb;
+$dark-gray:#6b6b6b;
+$light-gray:#b7b7b7; 
+
 #home {
     position: relative;
     display: flex;
@@ -23,6 +29,29 @@
         position: relative;
         margin-top: 19%;
         padding: 14px 23px;
+        z-index: 1;
+        background: rgb(122, 131, 119);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgb(100, 163, 70);
+            z-index: -1;
+            border-radius: 6%;
+
+            transition: transform 300ms ease-in-out;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        &:hover::before,
+        :focus::before {
+            transform: scaleX(1);
+        }
     }
 }
 
