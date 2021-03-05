@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import { withAuth } from './../../context/auth-context';
 
-import './Login.css'
+import './Login.scss'
 
 class Login extends Component {
   state = { email: "", password: "" };
@@ -31,10 +31,10 @@ class Login extends Component {
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           
           <label id="email-l">Email:</label>
-          <input id="input-form" required type="email" name="email" value={email} onChange={this.handleChange}/>
+          <input id="input-form" required type="email" name="email" placeholder="example@gmail.com" value={email} onChange={this.handleChange}/>
 
           <label id="password-l">Password:</label>
-          <input id="input-form" required type="password" name="password" value={password} onChange={this.handleChange} />
+          <input id="input-form" required type="password" name="password" placeholder="**********" value={password} onChange={this.handleChange} />
 
           <input id="login-btn" type="submit" value="Login" />
         </form>
