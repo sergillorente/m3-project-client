@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../context/auth-context';
 
-import './Footer.css'
+import './Footer.scss'
 
 import { IconDesign } from '../../styles/elements'
 

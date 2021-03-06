@@ -1,0 +1,68 @@
+@import '../../pages/Presentation/Presentation.scss';
+
+.hotel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 6%;
+    box-shadow: 5px 5px 15px;
+    padding-bottom: 5%;
+    width: 48%;
+    margin-left: 27%;
+    margin-top: 6%;
+    background-color: $light-green;
+}
+
+#picture {
+    position: relative;
+    max-width: 250px;
+    height: auto;
+    margin-top: 53px;
+    border-radius: 13px;
+    border: 2px solid;
+}
+
+#title {
+    font-size: 19px;
+}
+
+#district {
+    margin-top: 4%;
+    margin-right: 37%;
+    margin-bottom: -22px;
+    font-size: 17px;
+}
+
+.rating {
+    margin-left: 5%;
+}
+
+#description {
+    font-size: 16px;
+    margin: 3% 9%;
+}
+
+#button-share {
+    width: 49%;
+    height: 38px;
+    border: none;
+    color: black;
+    background-color: $cream;
+    border-radius: 11px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid;
+
+    &:hover {
+        color: white;
+        background-color: $dark-gray;
+        cursor: pointer; 
+    }
+}
+
+#rating {
+    display: flex;
+    flex-direction: row;
+}

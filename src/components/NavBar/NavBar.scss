@@ -1,7 +1,10 @@
+@import '../../pages/Presentation/Presentation.scss';
+
 .navbar {
-    background-color: #4fc3f7;
+    background-color: $dark-green;
     display: flex;
     justify-content: space-around;
+    border-bottom: 2px solid black;
 }
 
 .logo {
@@ -9,22 +12,32 @@
     height: auto;
     border-radius: 50%;
     margin-top: 4px;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
 .navbar-button {
     margin-top: 31px;
-    width: 65px;
-    height: 25px;
+    width: 82px;
+    height: 28px;
     border: none;
     color: black;
-    background-color: rgb(238, 88, 65);
+    border: 1px solid black;
+    background-color: $light-gray;
     border-radius: 8px;
     font-size: 14px;
     outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $dark-gray;
+        color: white;
+    }
 }
 
 #signup {
-    margin-left: 137px;
+    margin-left: 240%;
+    border: 1px solid black;
 }
 
 .username-name {
@@ -42,4 +55,5 @@
     border-radius: 8px;
     font-size: 14px;
     outline: none;
+    cursor: pointer;
 }

@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import { withAuth } from './../../context/auth-context';
 
-import './Signup.css'
+import './Signup.scss'
 
 class Signup extends Component {
   state = { 

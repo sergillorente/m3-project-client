@@ -1,0 +1,98 @@
+$dark-green:#006666;
+$light-green:#9dbcbc;
+$cream:#fff5bb;
+$dark-gray:#6b6b6b;
+$light-gray:#b7b7b7; 
+
+#home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: url(https://static.hosteltur.com/app/public/uploads/img/articles/2020/05/25/L_121711_l-132214-39d1ee00-z.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+    }
+
+    .update {
+        position: relative;
+        margin-top: 19%;
+        padding: 14px 23px;
+        z-index: 1;
+        box-shadow: 5px 5px 15px;
+        background: $dark-gray;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $dark-green;
+            z-index: -1;
+            border-radius: 6%;
+
+            transition: transform 300ms ease-in-out;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        &:hover::before,
+        :focus::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.presentation-logo{
+    position: relative;
+    max-width: 25%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 12%;
+    box-shadow: 5px 5px 15px;
+}
+
+.p-comments {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7%;
+    max-width: 58%;
+    margin: 4% 0%;
+    font-size: 15px;
+}
+#welcome {
+    line-height: 1.6em;
+    letter-spacing: .3px;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 5%;
+    box-shadow: 5px 5px 15px;
+    padding: 10px 16px;
+}
+#more {
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 5%;
+    box-shadow: 5px 5px 15px;
+    line-height: 1.6em;
+    letter-spacing: .3px;
+    padding: 10px 16px;
+}
+.project {
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 25%;
+}
