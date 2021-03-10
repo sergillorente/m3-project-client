@@ -15,7 +15,25 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+
+// EXAMPLE OF HOW TO CLEAR THE DATABASE
+
+const { clearDatabase } = require('../../server/db')
+
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+
+  on('task', {
+    'clear:db': () => {
+      return clearDatabase()
+    }
+  })
+
+  on('task', {
+    'seed:db': (data) => {
+      return seedDatabase(data)
+    }
+  })
 }
+
