@@ -25,11 +25,23 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (email, password) => {
-    cy.visit('http://localhost:4200/login');
-    cy.contains('Already registered?').click();
+    cy.visit('http://localhost:3000/login');
+    cy.contains('Sign up').click();
     cy.get('input[name="email"]').type(email);
     cy.get('input[name="password"]').type(password);
-    cy.get('#login-button').click();
-    cy.contains('Welcome back');
+    cy.get('#login-btn').click();
+    // cy.contains('Welcome back'); ADD A DEFAULT MESSAGE WHEN LOGGED IN, IF THERE IS ONE
 
+})
+
+Cypress.Commands.add('login', (user) => {
+    cy.request('POST', `${apiUrl}/login`, user)
+})
+
+Cypress.Commands.add("sign up", (user) => {
+    cy.request('POST', `${apiUrl}/signup`, user)
+})
+
+Cypress.Commands.add('getUser', (username) => {
+    return cy.request('GET', `${apiUrl}/users/${username}`)
 })
