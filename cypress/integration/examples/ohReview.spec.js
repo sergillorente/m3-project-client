@@ -17,9 +17,9 @@ context('Oh! Review App', () => {
         const password = chance.string({ length: 4 })
 
         const user = {
-            username: username,
-            email: email,
-            password: password
+            username,
+            email,
+            password
         }  
 
         cy.visit('http://localhost:3000/signup')
