@@ -29,6 +29,13 @@ class UserService {
         return pr;
     }
 
+    deleteUser = (id) => {
+        const pr = this.user.delete(`/delete/${id}`)
+            .then((response) => response.data)
+        
+        return pr;
+    }
+
 
 }
 

@@ -29,6 +29,11 @@ class Profile extends React.Component {
         this.setState({ [name]: value });
     };
 
+    handleDelete = () => {
+        this.props.logout();
+        userService.deleteUser(this.props.user._id);
+    }
+
     render() {
         const { username, password } = this.state;
 
@@ -56,6 +61,8 @@ class Profile extends React.Component {
                 <div>
                     {this.state.error && <p>{this.state.error}</p>}
                 </div>
+
+                <button className="ui primary button" onClick={this.handleDelete}>Delete my account</button>
 
                 <Footer />
             </div>

@@ -3,12 +3,21 @@ const chance = new Chance();
 
 // I DO NEED TO OPEN THE SERVER, THE CLIENT AND THE CYPRESS, 3 DIFFERENT WINDOWS AT THE SAME TIME
 
-context('Home Page functionality', () => {
-    beforeEach(() => {
-        // cy.task('clear:db')
-        // cy.task('seed:db', userSeed.data) // THIS SERVES TO CREATE NEW DATA
+context('Home Page', () => {
+    // beforeEach(() => {
+    //     // cy.task('clear:db')
+    //     // cy.task('seed:db', userSeed.data) // THIS SERVES TO CREATE NEW DATA
+    //     cy.visit('http://localhost:3000')
+    //     cy.contains('START NOW').click()
+    //   })
+
+      it('Home Page functionality', () => {
         cy.visit('http://localhost:3000')
-        cy.contains('START NOW').click()
+        cy.contains('START NOW')
+            .should().click()
+
+        cy.url()
+        .should('contain', '/hotels')
       })
 
       
