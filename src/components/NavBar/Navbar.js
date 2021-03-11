@@ -14,7 +14,7 @@ class NavBar extends React.Component {
         {isLoggedIn ? (
           <>
             <p className="username-name">{user && user.username}</p>
-            <button className='navbar-logout' onClick={logout}>Logout</button>
+            <button id='navbar-logout' onClick={logout}>Logout</button>
           </>
         ) : (
           <>

@@ -3,7 +3,7 @@ const chance = new Chance();
 
 // I DO NEED TO OPEN THE SERVER, THE CLIENT AND THE CYPRESS, 3 DIFFERENT WINDOWS AT THE SAME TIME
 
-context('Oh! Review App', () => {
+context('Home Page functionality', () => {
     beforeEach(() => {
         // cy.task('clear:db')
         // cy.task('seed:db', userSeed.data) // THIS SERVES TO CREATE NEW DATA
@@ -11,47 +11,12 @@ context('Oh! Review App', () => {
         cy.contains('START NOW').click()
       })
 
-      it('Sign Up page', () => {
-        const username = chance.name({ nationality: 'en' });  
-        const email = chance.email({ domain: 'mail.com' });
-        const password = chance.string({ length: 4 })
-
-        const user = {
-            username,
-            email,
-            password
-        }  
-
-        cy.visit('http://localhost:3000/signup')
-        cy.get('input[name="username"]').type(user.username)
-        cy.get('input[name="email"]').type(user.email)
-        cy.get('input[name="password"]').type(user.password)
-        cy.get('input#signup-btn').click()
-
-        // Once signed up, go to the login page
-
-        cy.url()
-            .should('contain', '/login')
-
-        // expect user from server to match user from test
-        cy.getUser(user.email)
-            .then(dbUser => expect(dbUser).to.deep.eql(user))
-               
-      });
-
-      it('Login page', () => {
-          const user = {
-              email: 'betty@mail.com',
-              password: '1234'
-          }
-      })
+      
 
     // afterEach(() => {
     //     //delete user
     // })
 
-    // I NEED TO KNOW HOW TO GENERATE RANDOM USERNAMES, EMAILS AND PASSWORDS TO ADD THEM INTO THE SIGNUP AND LOGIN PROCESS
-    // AS THE SIGNUP AND LOGIN PROCESS WILL ADD A RANDOM EMAIL AND PASSWORD, HOW CAN I CONTROLL THAT THE SAME RANDOM DATA IS ADDED INTO THE SIGNUP AND THE LOGIN PROCESS?
 
     // it('Successfully signs up without username', () => {
         // cy.url().should('include', 'hotels')
