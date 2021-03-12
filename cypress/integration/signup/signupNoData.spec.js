@@ -4,7 +4,7 @@ context('Sign up Page', () => {
         cy.visit('http://localhost:3000/signup')
     });
 
-    it('Sign Up page with all inputs without data and throw an error', () => { 
+    it('Sign Up page with all inputs empty, and then throw an error', () => { 
         cy.get('[type="text"]')
             .should('have.value', '')
         cy.get('[type="email"]')
@@ -15,7 +15,7 @@ context('Sign up Page', () => {
         
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains('Please fill all required fields in the signup')
-        
+            .contains('Please add an email. Remember the @ sign')
     })
+
 })

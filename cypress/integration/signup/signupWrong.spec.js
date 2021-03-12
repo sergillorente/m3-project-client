@@ -20,6 +20,10 @@ context('Sign up Page', () => {
         cy.get('[type="email"]').type(user.email)
         cy.get('[type="password"]').type(user.password)
         cy.get('#signup-btn').click()
+
+        cy.get(':nth-child(4) > p')
+            .should('be.visible')
+            .contains('Please add an email. Remember the @ sign')
     })
 
         it('Wrong sign up due to omission of password', () => {
@@ -38,6 +42,10 @@ context('Sign up Page', () => {
             cy.get('[type="password"]')
                 .should('have.value', '')
             cy.get('#signup-btn').click()
+
+            cy.get(':nth-child(4) > p')
+            .should('be.visible')
+            .contains('Please add a password')
 
     })
 })
