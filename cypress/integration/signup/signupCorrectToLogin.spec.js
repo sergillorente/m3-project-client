@@ -36,15 +36,5 @@ context('Sign up Page', () => {
         
         cy.url()
         .should('contain', '/hotels')
-
-        cy.get('#icon-profile > div > img').click()
-
-        cy.url()
-        .should('contain', '/profile')
-
-        cy.get('.ui').click()
-
-        cy.url()
-        .should('contain', '/login')
     })
 })
