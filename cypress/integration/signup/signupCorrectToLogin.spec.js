@@ -18,10 +18,10 @@ context('Sign up Page', () => {
             password
         }  
 
-        cy.get('input[name="username"]').type(user.username)
-        cy.get('input[name="email"]').type(user.email)
-        cy.get('input[name="password"]').type(user.password)
-        cy.get('input#signup-btn').click()
+        cy.get('[type="username"]').type(user.username)
+        cy.get('[type="email"]').type(user.email)
+        cy.get('[type="password"]').type(user.password)
+        cy.get('#signup-btn').click()
         
         cy.url()
         .should('contain', '/hotels')
@@ -30,9 +30,9 @@ context('Sign up Page', () => {
         
         cy.visit('http://localhost:3000/login')
         
-        cy.get('input[name="email"]').type(user.email)
-        cy.get('input[name="password"]').type(user.password)
-        cy.get('input#login-btn').click()
+        cy.get('[type="email"]').type(user.email)
+        cy.get('[type="password"]').type(user.password)
+        cy.get('#login-btn').click()
         
         cy.url()
         .should('contain', '/hotels')
