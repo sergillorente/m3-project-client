@@ -15,7 +15,7 @@ context('Sign up Page', () => {
         
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains('Please add an email. Remember the @ sign')
+            .contains('Please fill all required fields')
     })
 
 })
