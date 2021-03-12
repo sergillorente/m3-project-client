@@ -10,24 +10,12 @@ context('Sign up Page', () => {
         cy.get('[type="email"]')
             .should('have.value', '')
         cy.get('[type="password"]')
-        .should('have.value', '')
+            .should('have.value', '')
         cy.get('#signup-btn').click()
-
-        cy.get('[type="email"]')
-            .should('contain', 'Please fill in this field.')
         
-        // cy.url()
-        // .should('contain', '/hotels')
+        cy.get(':nth-child(4) > p')
+            .should('be.visible')
+            .contains('Please fill all required fields in the signup')
         
-        // cy.get('button#navbar-logout').click()
-        
-        // cy.visit('http://localhost:3000/login')
-        
-        // cy.get('input[name="email"]').type(user.email)
-        // cy.get('input[name="password"]').type(user.password)
-        // cy.get('input#login-btn').click()
-        
-        // cy.url()
-        // .should('contain', '/hotels')
     })
 })

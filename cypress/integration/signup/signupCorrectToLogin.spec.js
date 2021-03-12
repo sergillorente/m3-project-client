@@ -7,7 +7,7 @@ context('Sign up Page', () => {
         cy.visit('http://localhost:3000/signup')
     });
 
-    it('Sign Up page with all inputs set and correct', () => {
+    it('Sign Up page with all inputs set correct and proceed to login with those credentials', () => {
         const username = chance.name({ nationality: 'en' });  
         const email = chance.email({ domain: 'mail.com' });
         const password = chance.string({ length: 4 })

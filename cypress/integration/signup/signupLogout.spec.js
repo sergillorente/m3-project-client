@@ -7,7 +7,7 @@ context('Sign up Page', () => {
         cy.visit('http://localhost:3000/signup')
     });
 
-    it('Sign Up new user, login, and logout and delete of the user', () => {
+    it('Sign Up new user, login, logout, and delete of the user', () => {
         const username = chance.name({ nationality: 'en' });  
         const email = chance.email({ domain: 'mail.com' });
         const password = chance.string({ length: 4 })
