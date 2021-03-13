@@ -1,19 +1,27 @@
-context('Sign up Page', () => {
+ context('Sign up Page', () => {
     beforeEach(() => {
         cy.server()
-        cy.visit('http://localhost:3000/signup')
     });
 
-    it('Sign Up page with a user already created. Through an error', () => {
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
+    it('Sign Up page with a user already created. Throw an error', () => {
+
+        cy.visit('http://localhost:3000/signup')
         
         const user = {
-            username: 'Sergi',
-            email: 'sergi@mail.com',
+            username: 'Berto',
+            email: 'berto@mail.com',
             password: '1234'
-        }  
-        cy.get('[type="text"]').type(user.username)
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        }
+
+        cy.get(inputs.username).type(user.username)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
 
         cy.url()
@@ -25,15 +33,37 @@ context('Sign up Page', () => {
 
         cy.get('#signup').click()
 
-        cy.visit('http://localhost:3000/signup')
+        cy.url()
+            .should('contain', '/signup')
 
-        cy.get('[type="text"]').type(user.username)
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        cy.get(inputs.username).type(user.username)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
 
         cy.get(':nth-child(4) > p')
             .should('be.visible')
             .contains('User already exists')
     })
+
+    it('Delete the user', () => {
+
+        const user = {
+            username: 'Berto',
+            email: 'berto@mail.com',
+            password: '1234'
+        }
+
+        cy.get('[href="/login"] > .navbar-button').click()
+                    
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#login-btn').click()
+
+        cy.get('#icon-profile > div > img').click()
+
+        cy.get('.ui').click()
+    })
 })
+
+

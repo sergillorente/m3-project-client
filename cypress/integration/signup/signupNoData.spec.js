@@ -4,12 +4,18 @@ context('Sign up Page', () => {
         cy.visit('http://localhost:3000/signup')
     });
 
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
     it('Sign Up page with all inputs empty, and then throw an error', () => { 
-        cy.get('[type="text"]')
+        cy.get(inputs.username)
             .should('have.value', '')
-        cy.get('[type="email"]')
+        cy.get(inputs.email)
             .should('have.value', '')
-        cy.get('[type="password"]')
+        cy.get(inputs.password)
             .should('have.value', '')
         cy.get('#signup-btn').click()
         

@@ -7,6 +7,17 @@ context('Sign up Page', () => {
         cy.visit('http://localhost:3000/signup')
     });
 
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
+    const errorMessages = {
+        requiredField: 'Please fill all required fields',
+        validEmail: 'Please add an email. Remember the @ sign'
+    }
+
     it('Wrong sign up due to misstyping in the email', () => {
         const username = chance.name({ nationality: 'en' });
         const email = chance.string({ length: 10 });
@@ -16,14 +27,14 @@ context('Sign up Page', () => {
             email,
             password
         }
-        cy.get('[type="text"]').type(user.username)
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        cy.get(inputs.username).type(user.username)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
 
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains('Please add an email. Remember the @ sign')
+            .contains(errorMessages.validEmail)
     })
 
     it('Wrong sign up due to omission of password', () => {
@@ -35,16 +46,16 @@ context('Sign up Page', () => {
             email,
             password: ''
         }
-        cy.get('[type="text"]')
+        cy.get(inputs.username)
             .type(user.username)
-        cy.get('[type="email"]')
+        cy.get(inputs.email)
             .type(user.email)
-        cy.get('[type="password"]')
+        cy.get(inputs.password)
             .should('have.value', '')
         cy.get('#signup-btn').click()
 
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains('Please add a password')
+            .contains(errorMessages.requiredField)
     })
 })

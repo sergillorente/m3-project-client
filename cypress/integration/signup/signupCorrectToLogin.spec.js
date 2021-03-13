@@ -4,8 +4,13 @@ const chance = new Chance();
 context('Sign up Page', () => {
     beforeEach(() => {
         cy.server()
-        cy.visit('http://localhost:3000/signup')
     });
+
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
 
     it('Sign Up page with all inputs set correct and proceed to login with those credentials', () => {
         const username = chance.name({ nationality: 'en' });  
@@ -16,25 +21,39 @@ context('Sign up Page', () => {
             username,
             email,
             password
-        }  
+        }
+        
+        cy.visit('http://localhost:3000/signup')
 
-        cy.get('[type="username"]').type(user.username)
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        cy.get(inputs.username).type(user.username)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
         
         cy.url()
         .should('contain', '/hotels')
         
         cy.get('button#navbar-logout').click()
-        
-        cy.visit('http://localhost:3000/login')
-        
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
-        cy.get('#login-btn').click()
-        
+
         cy.url()
         .should('contain', '/hotels')
+
+        cy.get('[href="/login"] > .navbar-button').click()
+        
+        cy.url()
+            .should('contain', '/login')
+        
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#login-btn').click()
+
+    })
+
+    it('Delete the user', () => {
+
+        cy.get('#icon-profile > div > img').click()
+
+
+        cy.get('.ui').click()
     })
 })

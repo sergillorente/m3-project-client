@@ -31,10 +31,10 @@ class Login extends Component {
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           
           <label id="email-l">Email:</label>
-          <input id="input-form" required type="email" name="email" placeholder="example@gmail.com" value={email} onChange={this.handleChange}/>
+          <input id="input-form" type="text" name="email" placeholder="example@gmail.com" value={email} onChange={this.handleChange}/>
 
           <label id="password-l">Password:</label>
-          <input id="input-form" required type="password" name="password" placeholder="**********" value={password} onChange={this.handleChange} />
+          <input id="input-form" type="password" name="password" placeholder="**********" value={password} onChange={this.handleChange} />
 
           <input id="login-btn" type="submit" value="Login" />
         </form>

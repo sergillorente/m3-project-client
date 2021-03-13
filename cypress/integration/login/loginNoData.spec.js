@@ -4,10 +4,16 @@ context('Login Page', () => {
         cy.visit('http://localhost:3000/login')
     });
 
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
     it('Login page with all inputs empty, and then throw an error', () => { 
-        cy.get('[type="email"]')
+        cy.get(inputs.email)
             .should('have.value', '')
-        cy.get('[type="password"]')
+        cy.get(inputs.password)
             .should('have.value', '')
         cy.get('#login-btn').click()
         

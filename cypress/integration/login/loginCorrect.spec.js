@@ -4,14 +4,20 @@ context('Login Page', () => {
         cy.visit('http://localhost:3000/login')
     });
 
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
     it('Login with everything correct', () => {
         const user = {
-            email: "saw@mail.com",
+            email: "anana@mail.com",
             password: "1234"
         }  
 
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#login-btn').click()
         
         cy.url()
