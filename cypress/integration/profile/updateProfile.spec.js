@@ -1,25 +1,56 @@
 import Chance from 'chance';
 const chance = new Chance(); 
 
-context('Profile Page', () => {
+context('Sign up Page', () => {
+    beforeEach(() => {
+        cy.server()
+    });
+
+    const inputs = {
+        username: '[name="username"]',
+        email: '[name="email"]',
+        password: '[type="password"]',
+    }
 
     it('Update the username and the password', () => {
-        cy.server()
-        cy.visit('http://localhost:3000/login')
-
+        const username = chance.name({ nationality: 'en' });  
+        const email = chance.email({ domain: 'mail.com' });
+        const password = chance.string({ length: 4 })
         const newUsername = chance.name({ nationality: 'en' })
         const newPassword = chance.string({ length: 5 })
-        const user = {
-            newUsername,
-            email: "saw@mail.com",
-            password: "1234",
-            newPassword
-        }  
 
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
-        cy.get('#login-btn').click()
+        const user = {
+            username,
+            email,
+            password,
+            newUsername,
+            newPassword
+        }
         
+        cy.visit('http://localhost:3000/signup')
+
+        cy.get(inputs.username).type(user.username)
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#signup-btn').click()
+        
+        cy.url()
+        .should('contain', '/hotels')
+        
+        // cy.get('button#navbar-logout').click()
+
+        // cy.url()
+        // .should('contain', '/hotels')
+
+        cy.get('[href="/login"] > .navbar-button').click()
+        
+        cy.url()
+            .should('contain', '/login')
+        
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#login-btn').click()
+
         cy.url()
         .should('contain', '/hotels')
 
@@ -29,25 +60,15 @@ context('Profile Page', () => {
             .should('contain', '/profile')
 
         cy.get('[required=""]').type(user.newUsername)
-        cy.get('[type="password"]').type(user.newPassword)
+        cy.get(inputs.password).type(user.newPassword)
         cy.get('#profile-btn').click()
 
         cy.get('[type="password"]').type(user.password)
-        cy.get('#login-btn').click()
+        cy.get('#profile-btn').click()
     })
 
-    it('Get the initial password of the user, so I can have reuse this user more times', () => {
-        cy.server()
-        cy.visit('http://localhost:3000/profile')
+    it('Delete the user', () => {
 
-        const user = {
-            password: "1234"
-        }  
-
-        cy.get('[type="password"]').type(user.password)
-        cy.get('#profile-btn').click()
-
-        cy.get('[type="password"]')
-            .should('eq', '1234')
+        cy.get('.ui').click()
     })
 })

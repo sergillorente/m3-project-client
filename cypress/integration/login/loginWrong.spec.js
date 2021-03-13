@@ -7,34 +7,61 @@ context('Login Page', () => {
         cy.visit('http://localhost:3000/login')
     });
 
+    const inputs = {
+        email: '[name="email"]',
+        password: '[type="password"]'
+    }
+
+    const email = chance.email({ domain: 'mail.com' });
+    const password = chance.string({ length: 4 })
+
+    const user = {
+        email,
+        password,
+        emptyPassword: undefined
+    }
+
+    const errorMessages = {
+        requiredField: 'Please fill all required fields',
+        validEmail: 'Please add an email. Remember the @ sign',
+        noUser: `The user doesn't exist`
+    }
+
+    it('Wrong login because all inputs are empty', () => { 
+
+        cy.get(inputs.email)
+            .should('have.value', '')
+        cy.get(inputs.password)
+            .should('have.value', '')
+        cy.get('#login-btn').click()
+        
+        cy.get(':nth-child(4) > p')
+            .should('be.visible')
+            .contains(errorMessages.requiredField)
+    })
+
     it('Wrong sign up due to misstyping in the email', () => {
 
-        const user = {
-            email: 'saww@mail.com',
-            password: '1234'
-        }
-        cy.get('[type="email"]').type(user.email)
-        cy.get('[type="password"]').type(user.password)
+        
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
         cy.get('#login-btn').click()
 
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains(`The user doesn't exist`)
+            .contains(errorMessages.noUser)
     })
 
     it('Wrong sign up due to omission of password', () => {
-        const user = {
-            email: 'saw@mail.com',
-            password: ""
-        }
-        cy.get('[type="email"]')
+        
+        cy.get(inputs.email)
             .type(user.email)
-        cy.get('[type="password"]')
+        cy.get(inputs.password)
             .should('have.value', '')
-        cy.get('#signup-btn').click()
+        cy.get('#login-btn').click()
 
         cy.get(':nth-child(4) > p')
             .should('be.visible')
-            .contains('Please add a password')
+            .contains(errorMessages.requiredField)
     })
 })
