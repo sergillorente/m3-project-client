@@ -18,8 +18,8 @@ const ReviewCard = (props) => {
 
     return (
     <div className="review">
-        <img className="picture" src='/images/default-profile.jpg' alt='user' /> {/* Backlog --- Add the picture of every single user who updates its picture profile // userId.picture */}
-        <p>{userId.username}</p>
+        <img className="picture" src='/images/default-profile.jpg' alt='user' /> 
+        <p>{userId?.username}</p>
         <p>{moment(created_at).format('YYYY-MM-DD hh:mm:ss a')}</p>
         <p>{text}</p>
         <p>{rating}</p>
