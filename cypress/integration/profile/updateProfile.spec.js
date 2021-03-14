@@ -1,7 +1,7 @@
 import Chance from 'chance';
 const chance = new Chance(); 
 
-context('Sign up Page', () => {
+context('Profile Page', () => {
     beforeEach(() => {
         cy.server()
     });
@@ -36,23 +36,6 @@ context('Sign up Page', () => {
         
         cy.url()
         .should('contain', '/hotels')
-        
-        // cy.get('button#navbar-logout').click()
-
-        // cy.url()
-        // .should('contain', '/hotels')
-
-        cy.get('[href="/login"] > .navbar-button').click()
-        
-        cy.url()
-            .should('contain', '/login')
-        
-        cy.get(inputs.email).type(user.email)
-        cy.get(inputs.password).type(user.password)
-        cy.get('#login-btn').click()
-
-        cy.url()
-        .should('contain', '/hotels')
 
         cy.get('#icon-profile > div > img').click()
 
@@ -61,9 +44,6 @@ context('Sign up Page', () => {
 
         cy.get('[required=""]').type(user.newUsername)
         cy.get(inputs.password).type(user.newPassword)
-        cy.get('#profile-btn').click()
-
-        cy.get('[type="password"]').type(user.password)
         cy.get('#profile-btn').click()
     })
 
