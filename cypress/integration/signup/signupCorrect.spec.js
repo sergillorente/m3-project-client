@@ -1,7 +1,7 @@
 import Chance from 'chance';
 const chance = new Chance(); 
 
-context('Sign up Page', () => {
+context('Sign up, Login, Hotels, and HotelDetail Page', () => {
     beforeEach(() => {
         cy.server()
     });
@@ -37,6 +37,7 @@ context('Sign up Page', () => {
     })
     
     it('Load data when signed up', () => {
+
         cy.visit('http://localhost:3000/login')
         
         cy.get(inputs.email).type(user.email)
@@ -51,7 +52,7 @@ context('Sign up Page', () => {
         
     })
     
-    it('Pick a hotel and leave a review', () => {
+    it('Pick a hotel and leave a review and delete it', () => {
         cy.visit('http://localhost:3000/login')
         
         cy.get(inputs.email).type(user.email)
@@ -76,90 +77,90 @@ context('Sign up Page', () => {
 
         cy.get('.container > :nth-child(1) > :nth-child(5)')
             .should('be.visible')
+
+        cy.get('#delete-btn').click()
     })
 
-    // it('Delete a review', () => {
 
-    //     cy.visit('http://localhost:3000/hotel-detail')
+    it('Load search bar and test its functionality', () => {
 
-    //     cy.get('#delete-btn')
-    // })
+        const searchInputs = {
+            hotel: 'Four Points',
+            hotelEmpty: '',
+            filteredDistrict: 'Ciutat Vella',
+            filteredCategory: '5-stars',
+            hotelFairmont: 'Hotel Fairmont',
+            hotelClaris: 'Claris Hotel'
+        }
 
-
-
-    // it('Load search bar and test its functionality', () => {
-
-    //     const searchInputs = {
-    //         hotel: 'Four Points',
-    //         hotelEmpty: '',
-    //         filteredDistrict: 'Ciutat Vella',
-    //         filteredCategory: '5-stars',
-    //         hotelFairmont: 'Hotel Fairmont',
-    //         hotelClaris: 'Claris Hotel'
-    //     }
-
-    //     cy.get('#search').type(searchInputs.hotel)
+        cy.visit('http://localhost:3000/login')
         
-    //     cy.get('#search-btn').click()
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#login-btn').click()
+
+        cy.get('#search').type(searchInputs.hotel)
         
-    //     cy.get('#title')
-    //         .should('contain', searchInputs.hotel)
+        cy.get('#search-btn').click()
+        
+        cy.get('#title')
+            .should('contain', searchInputs.hotel)
 
-    //     cy.get('#remove').click()
+        cy.get('#remove').click()
 
-    //     cy.get('#search').clear()
-    //         .should('have.value', searchInputs.hotelEmpty)
+        cy.get('#search').clear()
+            .should('have.value', searchInputs.hotelEmpty)
 
-    //     cy.get('#filter-district')
-    //         .select(searchInputs.filteredDistrict)
+        cy.get('#filter-district')
+            .select(searchInputs.filteredDistrict)
 
-    //     cy.get('#search').click()
+        cy.get('#search').click()
 
-    //     cy.get(':nth-child(1) > :nth-child(2) > :nth-child(1) > #district')
-    //         .should('contain', searchInputs.filteredDistrict)
+        cy.get(':nth-child(1) > :nth-child(2) > :nth-child(1) > #district')
+            .should('contain', searchInputs.filteredDistrict)
     
-    //     cy.get('#filter-district')
-    //     .select('Show All')
+        cy.get('#filter-district')
+        .select('Show All')
         
-    //     cy.get('#remove').click()
+        cy.get('#remove').click()
 
-    //     cy.get('#filter-category')
-    //         .select(searchInputs.filteredCategory)
+        cy.get('#filter-category')
+            .select(searchInputs.filteredCategory)
 
-    //     cy.get('#search').click()
+        cy.get('#search').click()
 
-    //     cy.get(':nth-child(3) > :nth-child(1) > #title')
-    //         .should('contain', searchInputs.hotelFairmont, searchInputs.hotelClaris)
+        cy.get(':nth-child(3) > :nth-child(1) > #title')
+            .should('contain', searchInputs.hotelFairmont, searchInputs.hotelClaris)
         
-    //     cy.get('#filter-district')
-    //         .select('Show All') 
+        cy.get('#filter-district')
+            .select('Show All') 
             
-    //     cy.get('#remove').click()
+        cy.get('#remove').click()
 
-    // })
+    })
 
-    // it('Logout and login', () => {
+    it('Logout and login', () => {
         
-    //     cy.get('#navbar-logout').click()
+        cy.get('#navbar-logout').click()
 
-    //     cy.visit('http://localhost:3000/hotels') // I'm refreshing the website because cypress doesn't recognize properly the cokies of the user 
+        cy.visit('http://localhost:3000/hotels') // I'm refreshing the website because cypress doesn't recognize properly the cokies of the user 
 
-    //     cy.get('[href="/login"] > .navbar-button').click()
+        cy.get('[href="/login"] > .navbar-button').click()
         
-    //     cy.url()
-    //         .should('contain', '/login')
+        cy.url()
+            .should('contain', '/login')
         
-    //     cy.get(inputs.email).type(user.email)
-    //     cy.get(inputs.password).type(user.password)
-    //     cy.get('#login-btn').click()
+        cy.get(inputs.email).type(user.email)
+        cy.get(inputs.password).type(user.password)
+        cy.get('#login-btn').click()
 
-    // })
+    })
 
-    // it('Delete the user', () => {
+    it('Delete the user', () => {
 
-    //     cy.get('#icon-profile > div > img').click()
+        cy.get('#icon-profile > div > img').click()
 
 
-    //     cy.get('.ui').click()
-    // })
+        cy.get('.ui').click()
+    })
 })
