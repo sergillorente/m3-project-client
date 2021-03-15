@@ -37,11 +37,12 @@ class Login extends Component {
           <input id="input-form" type="password" name="password" placeholder="**********" value={password} onChange={this.handleChange} />
 
           <input id="login-btn" type="submit" value="Login" />
-        </form>
 
-        <div>
-          {this.props.error && <p>{this.props.error}</p>}
-        </div>
+          <div id="error-messages">
+            {this.props.error && <p>{this.props.error}</p>} 
+          </div>
+          
+        </form>
 
         <div id="to-signup">
           <p>or <Link to="/signup"> Sign up</Link> if you don't have an account</p>

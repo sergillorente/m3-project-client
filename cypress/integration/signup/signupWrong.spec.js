@@ -38,7 +38,7 @@ context('Sign up Page', () => {
             .should('have.value', '')
         cy.get('#signup-btn').click()
         
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains('Please fill all required fields')
     })
@@ -50,7 +50,7 @@ context('Sign up Page', () => {
         cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
 
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains(errorMessages.validEmail)
     })
@@ -72,7 +72,7 @@ context('Sign up Page', () => {
             .should('have.value', '')
         cy.get('#signup-btn').click()
 
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains(errorMessages.requiredField)
     })
@@ -107,7 +107,7 @@ context('Sign up Page', () => {
         cy.get(inputs.password).type(newUser.password)
         cy.get('#signup-btn').click()
 
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains('User already exists')
     })

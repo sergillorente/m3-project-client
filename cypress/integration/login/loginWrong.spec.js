@@ -35,7 +35,7 @@ context('Login Page', () => {
             .should('have.value', '')
         cy.get('#login-btn').click()
         
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains(errorMessages.requiredField)
     })
@@ -47,7 +47,7 @@ context('Login Page', () => {
         cy.get(inputs.password).type(user.password)
         cy.get('#login-btn').click()
 
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains(errorMessages.noUser)
     })
@@ -60,7 +60,7 @@ context('Login Page', () => {
             .should('have.value', '')
         cy.get('#login-btn').click()
 
-        cy.get(':nth-child(4) > p')
+        cy.get('#error-messages > p')
             .should('be.visible')
             .contains(errorMessages.requiredField)
     })

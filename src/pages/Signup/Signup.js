@@ -45,12 +45,13 @@ class Signup extends Component {
           <input id="input-form" type="password" name="password" value={password} onChange={this.handleChange} />
 
           <input id="signup-btn" type="submit" value="Signup" />
+
+          <div id="error-messages">
+            {this.props.error && <p>{this.props.error}</p>} 
+          </div>
+
         </form>
-
-        <div>
-        {this.props.error && <p>{this.props.error}</p>} 
-        </div>
-
+        
         <div id="to-login">
           <p>or <Link to="/login"> Log in</Link> if you already have an account</p>
         </div>

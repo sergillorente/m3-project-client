@@ -33,6 +33,9 @@ context('Sign up, Login, Hotels, and HotelDetail Page', () => {
         cy.get(inputs.email).type(user.email)
         cy.get(inputs.password).type(user.password)
         cy.get('#signup-btn').click()
+
+        cy.url()
+            .should('contain', '/hotels')
         
     })
     

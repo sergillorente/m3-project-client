@@ -2,7 +2,7 @@ import React from 'react'
 import { withAuth } from './../../context/auth-context';
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
-import './Profile.css'
+import './Profile.scss'
 import userService from '../../lib/user-service'
 
 class Profile extends React.Component {

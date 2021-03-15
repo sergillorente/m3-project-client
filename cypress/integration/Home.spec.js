@@ -1,5 +1,3 @@
-
-
 context('Home Page and load of Data', () => {
 
       it('Home Page functionality', () => {
