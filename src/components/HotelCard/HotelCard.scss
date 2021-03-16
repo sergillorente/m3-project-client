@@ -9,30 +9,30 @@
     border-radius: 6%;
     box-shadow: 5px 5px 15px;
     padding-bottom: 5%;
-    width: 48%;
-    margin-left: 27%;
-    margin-top: 6%;
+    width: 75vw;
+    margin-left: 12%;
+    margin-top: 9%;
     background-color: $light-green;
 }
 
 #picture {
     position: relative;
-    max-width: 250px;
+    max-width: 200px;
     height: auto;
-    margin-top: 53px;
+    margin-top: 34px;
     border-radius: 13px;
     border: 2px solid;
 }
 
 #title {
-    font-size: 19px;
+    font-size: 17px;
+    margin: 5% 10%;
 }
 
 #district {
     margin-top: 4%;
-    margin-right: 37%;
-    margin-bottom: -22px;
-    font-size: 17px;
+    margin-bottom: 2%;
+    font-size: 16px;
 }
 
 .rating {
@@ -40,12 +40,12 @@
 }
 
 #description {
-    font-size: 16px;
+    font-size: 1em;
     margin: 3% 9%;
 }
 
 #button-share {
-    width: 49%;
+    width: 57%;
     height: 38px;
     border: none;
     color: black;

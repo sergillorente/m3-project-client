@@ -5,25 +5,32 @@
     display: flex;
     justify-content: space-around;
     border-bottom: 2px solid black;
+    height: 80px;
 }
 
 .logo {
-    max-width: 75px;
+    max-width: 73px;
     height: auto;
     border-radius: 50%;
-    margin-top: 4px;
+    margin-top: 3px;
     border: 2px solid black;
     cursor: pointer;
 }
 
+.clickable-buttons {
+    display: flex;
+    display: flex;
+    margin-right: 30%;
+}
+
 .navbar-button {
-    margin-top: 31px;
-    width: 82px;
-    height: 28px;
+    margin-top: 29px;
+    width: 75px;
+    height: 25px;
     border: none;
     color: black;
     border: 1px solid black;
-    background-color: $light-gray;
+    background-color: #b7b7b7;
     border-radius: 8px;
     font-size: 14px;
     outline: none;
@@ -41,17 +48,20 @@
 }
 
 .username-name {
-    font-size: 17px;
-    margin-top: 30px;
+    font-size: 1.2em;
+    margin-top: 26px;
+    background: #fff;
+    padding: 5px 26px;
+    border-radius: 53%;
 }
 
 #navbar-logout {
-    margin-top: 31px;
-    width: 60px;
+    margin-top: 30px;
+    width: 58px;
     height: 25px;
-    border: none;
+    border: 2px solid $light-gray;
     color: black;
-    background-color: rgb(238, 88, 65);
+    background-color: #ee5841;
     border-radius: 8px;
     font-size: 14px;
     outline: none;

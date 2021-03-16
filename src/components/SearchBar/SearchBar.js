@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
                 <form className="search-bar" onSubmit={this.handleSubmit}>
                     <input id="search" type="text" name="search" placeholder="Search..." value={this.state.search} onChange={this.handleChange} />
                     <label id="separation">
-                        Filter by district:
+                            Filter by district:
                         <select id="filter-district" name="district" value={this.state.district} onChange={this.handleChange}>
                             <option value="">Show All</option>
                             <option value="Sants-Montjuïc">Sants-Montjuïc</option>
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
                         </select>
                     </label>
                     <label id="separation">
-                        Filter by category:
+                            Filter by category:
                         <select id="filter-category" name="category" value={this.state.category} onChange={this.handleChange}>
                             <option value="">Show All</option>
                             <option value={3}>3-stars</option>
@@ -47,9 +47,11 @@ class SearchBar extends React.Component {
                             <option value={5}>5-stars</option>
                         </select>
                     </label>
-                    <input id="search-btn" type="submit" value="Search" />
                 </form>
-                <button id="remove" onClick={this.props.removeFilters}>Remove filters</button>
+                <div id="action-btns">
+                    <input id="search-btn" type="submit" value="Search" />
+                    <button id="remove" onClick={this.props.removeFilters}>Remove filters</button>
+                </div>
             </div>
         )
     }

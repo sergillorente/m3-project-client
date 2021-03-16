@@ -17,7 +17,7 @@ class NavBar extends React.Component {
             <button id='navbar-logout' onClick={logout}>Logout</button>
           </>
         ) : (
-          <>
+          <div className="clickable-buttons">
             <Link to="/signup">
               <button className="navbar-button" id="signup">Sign Up</button>{' '}
             </Link>
@@ -25,7 +25,7 @@ class NavBar extends React.Component {
             <Link to="/login">
               <button className="navbar-button">Log in</button>{' '}
             </Link>
-          </>
+          </div>
         )}
       </nav>
     );
