@@ -15,14 +15,16 @@
 }
 
 #username-s {
-    margin-right: 73px;
+    margin-right: 30%;
     margin-bottom: 3px;
+    font-size: 1.2em;
 }
 
 #email-s {
-    margin-right: 102px;
+    margin-right: 39%;
     margin-top: 20px;
     margin-bottom: 3px;
+    font-size: 1.2em;
 }
 #email-s::after {
     content: '*';
@@ -30,9 +32,10 @@
 }
 
 #password-s {
-    margin-right: 78px;
+    margin-right: 29%;
     margin-top: 20px;
     margin-bottom: 3px;
+    font-size: 1.2em;
 }
 #password-s::after {
     content: '*';
@@ -41,8 +44,8 @@
 
 #input-form {
     border-radius: 16px;
-    width: 43%;
-    height: 17px;
+    width: 62%;
+    height: 28px;
 }
 
 #signup-btn {
@@ -66,4 +69,5 @@
 #to-login {
     margin-top: 15%;
     margin-left: 14%;
+    font-size: 1.2rem;
 }

@@ -1,5 +1,13 @@
 @import '../src/pages/Presentation/Presentation.scss';
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
