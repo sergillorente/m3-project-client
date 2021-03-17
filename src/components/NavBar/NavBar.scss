@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     border-bottom: 2px solid black;
-    height: 80px;
+    height: auto;
 }
 
 .logo {
@@ -19,8 +19,7 @@
 
 .clickable-buttons {
     display: flex;
-    display: flex;
-    margin-right: 30%;
+    justify-content: space-around;
 }
 
 .navbar-button {
@@ -66,4 +65,26 @@
     font-size: 14px;
     outline: none;
     cursor: pointer;
+}
+
+@media (min-width: 46.875rem) {
+    .logo {
+        max-width: 6rem;
+        height: auto;
+        margin-top: .5rem;
+    }
+
+    .clickable-buttons {
+        margin-right: 20%;
+    }
+
+    .navbar-button {
+        margin-top: 2.4rem;
+        width: 6rem;
+        height: auto;
+    }
+
+    #signup {
+        margin-left: 313%;
+    }
 }

@@ -9,7 +9,7 @@
     border-radius: 6%;
     box-shadow: 5px 5px 15px;
     padding-bottom: 5%;
-    width: 75vw;
+    width: 40vw;
     margin-left: 12%;
     margin-top: 9%;
     background-color: $light-green;
@@ -65,4 +65,11 @@
 #rating {
     display: flex;
     flex-direction: row;
+}
+
+@media (min-width: 46.875rem) {
+    .hotel-card {
+        width: 37vw;
+        margin: 7% 30%;
+    }
 }
